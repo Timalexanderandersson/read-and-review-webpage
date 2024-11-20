@@ -1,0 +1,54 @@
+
+/*Background header*/
+.headbackground{
+    background-color: #FEF9EF;
+}
+/*H1*/
+.bigtext {
+    font-size: 2.5rem;
+}
+
+/*Nav bar links styles*/
+.linktext {
+    color:black;
+    font-weight: bold;
+}
+.linktext:hover {
+    color: white;
+    
+}
+.navcolor {
+    background-color: rgb(235, 235, 235);
+    box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.linkshiding{
+    display: none;
+}
+
+@media (min-width: 400px){
+    .bigtext {
+        font-size: 3rem;
+    }
+
+    .linktext {
+        font-size: 1rem;
+        margin-right: 1vh;
+    }
+    .hidelink {
+        display: none ;
+    }
+    .linkshiding{
+        display: flex;
+    }
+
+}
+@media (min-width: 768px){
+    .bigtext {
+        font-size: 3.5rem;
+    }
+
+    .linktext {
+        font-size: 1.3rem;
+        margin-right: 7vh;
+    }
+}
