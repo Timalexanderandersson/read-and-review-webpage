@@ -1,0 +1,12 @@
+.hrline {
+    height: 2px;
+    background-color: black;
+    width: 50vh;
+}
+
+.linediv{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
