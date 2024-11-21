@@ -2,16 +2,30 @@
 /*Background header*/
 .headbackground{
     background-color: #FEF9EF;
+    position: relative;
+    width:100%;
+    top:0;
+
 }
 /*H1*/
 .bigtext {
     font-size: 2.5rem;
 }
+/*Icon for dropdown*/
+.iconbutton{
+    font-size: 1.5rem;
+    
+}
+.iconbutton:hover{
+    color: white;
+}
+
 
 /*Nav bar links styles*/
 .linktext {
     color:black;
     font-weight: bold;
+    text-decoration: none;
 }
 .linktext:hover {
     color: white;
@@ -21,8 +35,22 @@
     background-color: rgb(235, 235, 235);
     box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
+/*Hiding the links*/
 .linkshiding{
     display: none;
+}
+/*Inside the nav link icon*/
+.smallnavlink{
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.smallnavlink:hover{
+
+    color: rgb(235, 235, 235);
+
 }
 
 @media (min-width: 400px){
@@ -31,8 +59,8 @@
     }
 
     .linktext {
-        font-size: 1rem;
-        margin-right: 1vh;
+        font-size: 1.2rem;
+        margin-right: 3vh;
     }
     .hidelink {
         display: none ;
