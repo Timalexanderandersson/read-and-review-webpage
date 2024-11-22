@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/Lines.module.css";
 import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const Signup = () => {
+
+  const [dataForm, setdataForm] = useState({
+    username:'',
+    password:'',
+    password2:'',
+  })
+  const {username, password, password2} = setdataForm();
+
+  const handleChange = (event) => {
+    setdataForm({
+      ...dataForm,
+      [event.target.name]: event.target.value
+    })
+  }
+
   return (
     <div>
       <div className="container">
@@ -22,19 +37,31 @@ export const Signup = () => {
               <Form.Label className="d-flex justify-content-center mt-3">
                 Username
               </Form.Label>
-              <Form.Control type="email" placeholder="Username" />
+              <Form.Control 
+              name="username"
+              type="email" 
+              placeholder="Username"
+              value={username}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupPassword">
               <Form.Label className="d-flex justify-content-center">
                 Password
               </Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control 
+              name="password"
+              type="password" 
+              placeholder="Password"
+              value={password} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupPassword">
               <Form.Label className="d-flex justify-content-center">
                 Password again
               </Form.Label>
-              <Form.Control type="password" placeholder="Password again" />
+              <Form.Control 
+              name="password2"
+              type="password" 
+              placeholder="Password again"
+              value={password2}/>
             </Form.Group>
             <Button variant="outline-secondary">Create your account</Button>
             <p className={signbox.textmargin}>

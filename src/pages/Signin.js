@@ -3,8 +3,10 @@ import styles from "../styles/Lines.module.css";
 import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const Signin = () => {
+
   return (
     <div>
     <div className="container">
@@ -22,15 +24,20 @@ export const Signin = () => {
             <Form.Label className="d-flex justify-content-center mt-3">
               Username
             </Form.Label>
-            <Form.Control type="email" placeholder="Username" />
+            <Form.Control type="email"
+             placeholder="Username"
+             value="username" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGroupPassword">
             <Form.Label className="d-flex justify-content-center">
               Password
             </Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control 
+            type="password" 
+            placeholder="Password"
+            />
           </Form.Group>
-          <Button variant="outline-secondary">Sign in</Button>
+          <Button variant="outline-secondary" type="submit">Sign in</Button>
           <p className={signbox.textmargin}>
             No account yet?{" "}
             <Link className={signbox.linktoacc} to="/Register">
