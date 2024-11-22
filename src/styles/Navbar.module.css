@@ -52,7 +52,7 @@
     color: rgb(235, 235, 235);
 
 }
-
+/*media query for 400px*/
 @media (min-width: 400px){
     .bigtext {
         font-size: 3rem;
@@ -70,6 +70,7 @@
     }
 
 }
+/*media query for 768px*/
 @media (min-width: 768px){
     .bigtext {
         font-size: 3.5rem;

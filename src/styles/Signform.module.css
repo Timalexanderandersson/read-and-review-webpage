@@ -2,6 +2,7 @@
 .secondone{
     display:flex;
     justify-content: center;
+    height: auto;
 }
 .signbox {
     width: 70%;
@@ -12,7 +13,7 @@
     justify-content: center;
 }
 .formview {
-    width:50%;
+    width:80%;
     text-align: center;
     height: auto;
 }
@@ -26,5 +27,46 @@
 }
 .linktoacc:hover {
     color:white;
+}
+
+@media (min-width: 400px){
+    .bigtext {
+        font-size: 3rem;
+    }
+
+    .linktext {
+        font-size: 1.2rem;
+        margin-right: 3vh;
+    }
+    .hidelink {
+        display: none ;
+    }
+    .linkshiding{
+        display: flex;
+    }
+
+}
+/*media query for 400px*/
+@media (min-width: 400px){
+    .formview {
+        width:25vh;
+    }
+
+}
+
+/*media query for 768px*/
+@media (min-width: 768px){
+    .formview {
+        width:35vh;
+    }
+
+}
+/*media query for 900px*/
+@media (min-width: 900px){
+    .signbox {
+        width: 70vh;
+
+    }
+
 }
 
