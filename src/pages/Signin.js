@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/Lines.module.css";
 import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const Signin = () => {
+
+  const [signInForm, setsigninForm] = useState({
+    username:"",
+    password:"",
+  })
+
+  const {username, password} = signInForm;
+
+  const navigation = useNavigate();
+  const [errors, setErrors] = useState({});
 
   return (
     <div>
@@ -20,15 +30,16 @@ export const Signin = () => {
     <div className={`${signbox.secondone} mt-2`}>
       <div className={signbox.signbox}>
         <Form className={signbox.formview}>
-          <Form.Group className="mb-3" controlId="formGroupEmail">
+          <Form.Group className="mb-3">
             <Form.Label className="d-flex justify-content-center mt-3">
               Username
             </Form.Label>
-            <Form.Control type="email"
+            <Form.Control 
+            type="username"
              placeholder="Username"
              />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="formGroupPassword">
+          <Form.Group className="mb-3">
             <Form.Label className="d-flex justify-content-center">
               Password
             </Form.Label>
