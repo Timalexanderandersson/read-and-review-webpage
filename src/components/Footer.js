@@ -11,13 +11,13 @@ const Footer = () => {
         </p>
         <div className={styles.centerblock}>
         <a href='https://www.instagram.com/' target="_blank" rel="noopener" className={styles.iconsfooter}>
-        <i class="fa-brands fa-instagram"></i>
+        <i className="fa-brands fa-instagram"></i>
         </a>
         <a href='https://sv-se.facebook.com/' target="_blank" rel="noopener" className={styles.iconsfooter}>
-        <i class="fa-brands fa-facebook-f"></i>
+        <i className="fa-brands fa-facebook-f"></i>
         </a>
         <a href='https://www.youtube.com/' target="_blank" rel="noopener" className={styles.iconsfooter}>
-        <i class="fa-brands fa-youtube"></i>
+        <i className="fa-brands fa-youtube"></i>
         </a>
         </div>
 

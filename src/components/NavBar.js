@@ -19,17 +19,17 @@ export const NavBar = () => {
             </Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Link to="/explore-new" eventKey="link-1" className={styles.linktext}>
+            <Link to="/explore-new" className={styles.linktext}>
               Explore new
             </Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Link to="/signin" eventKey="link-2" className={styles.linktext}>
+            <Link to="/signin" className={styles.linktext}>
               Sign in
             </Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Link to="/Register" eventKey="link-3" className={styles.linktext}>
+            <Link to="/Register" className={styles.linktext}>
               Register
             </Link>
           </Nav.Item>
@@ -38,7 +38,7 @@ export const NavBar = () => {
         <Dropdown.Toggle id="dropdown-autoclose-true"
         as="span" 
          className={styles.iconbutton}>
-        <i class="fa-regular fa-circle-down"></i>
+        <i className="fa-regular fa-circle-down"></i>
         </Dropdown.Toggle>
         <Dropdown.Menu>
             <Link className={styles.smallnavlink} to="/" >Home</Link>

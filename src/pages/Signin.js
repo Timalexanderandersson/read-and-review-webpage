@@ -3,7 +3,7 @@ import styles from "../styles/Lines.module.css";
 import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 
 export const Signin = () => {
 
@@ -26,7 +26,7 @@ export const Signin = () => {
             </Form.Label>
             <Form.Control type="email"
              placeholder="Username"
-             value="username" />
+             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formGroupPassword">
             <Form.Label className="d-flex justify-content-center">
