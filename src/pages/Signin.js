@@ -3,6 +3,7 @@ import styles from "../styles/Lines.module.css";
 import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 export const Signin = () => {
@@ -14,8 +15,26 @@ export const Signin = () => {
 
   const {username, password} = signInForm;
 
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
+
+  const handleChange = (event) => {
+    setsigninForm({
+      ...signInForm,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post('/dj-rest-auth/login/', signInForm)
+      navigate('/explore-new')
+
+    } catch(err) {
+      setErrors(err.response?.data)
+    }
+  }
 
   return (
     <div>
@@ -29,25 +48,32 @@ export const Signin = () => {
     </div>
     <div className={`${signbox.secondone} mt-2`}>
       <div className={signbox.signbox}>
-        <Form className={signbox.formview}>
+        <Form className={signbox.formview} onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label className="d-flex justify-content-center mt-3">
               Username
             </Form.Label>
-            <Form.Control 
+            <Form.Control
+            name="username"
             type="username"
              placeholder="Username"
-             />
+             value={username}
+              onChange={handleChange}/>
           </Form.Group>
+          {errors.username}
           <Form.Group className="mb-3">
             <Form.Label className="d-flex justify-content-center">
               Password
             </Form.Label>
-            <Form.Control 
+            <Form.Control
+            name="password"
             type="password" 
             placeholder="Password"
-            />
+            value={password}
+            onChange={handleChange}/>
           </Form.Group>
+          {errors.password}
+          {errors.non_field_errors}
           <Button variant="outline-secondary" type="submit">Sign in</Button>
           <p className={signbox.textmargin}>
             No account yet?{" "}
