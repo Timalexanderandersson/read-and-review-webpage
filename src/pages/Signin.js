@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../styles/Lines.module.css";
 import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { setcurrentUserInfo } from "../App";
 
 
 export const Signin = () => {
+
+  const settingCurrentUser = useContext(setcurrentUserInfo)
 
   const [signInForm, setsigninForm] = useState({
     username:"",
@@ -28,8 +31,10 @@ export const Signin = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('/dj-rest-auth/login/', signInForm)
-      navigate('/explore-new')
+     const {data} = await axios.post('/dj-rest-auth/login/', signInForm)
+     settingCurrentUser(data.user)
+     navigate('/explore-new')
+      
 
     } catch(err) {
       setErrors(err.response?.data)
