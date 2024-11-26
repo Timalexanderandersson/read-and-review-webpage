@@ -4,7 +4,8 @@ import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { SetCurrentUserInfo } from "../App";
+import { SetCurrentUserInfo } from "../users/userInformation";
+
 
 
 export const Signin = () => {

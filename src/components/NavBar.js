@@ -4,7 +4,8 @@ import styles from "../styles/Navbar.module.css";
 import { Dropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { CurrentUserInfo, SetCurrentUserInfo } from "../App";
+import { CurrentUserInfo, SetCurrentUserInfo } from "../users/userInformation";
+
 
 export const NavBar = () => {
   const userNow = useContext(CurrentUserInfo)
