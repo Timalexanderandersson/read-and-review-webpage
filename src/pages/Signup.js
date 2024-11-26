@@ -27,7 +27,7 @@ export const Signup = () => {
     event.preventDefault();
     try {
       await axios.post('/dj-rest-auth/registration/', dataForm)
-      navigate('/explore-new')
+      navigate('/signin')
 
     } catch(err) {
       setErrors(err.response?.data)

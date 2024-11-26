@@ -2,37 +2,37 @@ import styles from"./App.module.css"
 import './App.css';
 import { NavBar } from './components/NavBar';
 import Footer from "./components/Footer";
-import {Route, Routes } from "react-router-dom"
+import {Route, Routes, useNavigate } from "react-router-dom"
 import { Signup } from "./pages/Signup.js"
 import "./api/axiosBasic.js"
 import { Signin } from "./pages/Signin.js";
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { createContext } from "react";
 import axios from "axios";
 
-export const currentUserInfo = createContext();
-export const setcurrentUserInfo = createContext();
-
+export const CurrentUserInfo = createContext();
+export const SetCurrentUserInfo = createContext();
 
 function App() {
-  const [nowUser, setnowUser] = useState(null);
+const [nowUser, setnowUser] = useState(null);
 
-  const collectInfo = async () => {
-    try{
-      const { collecting } = await axios.get('/dj-rest-auth/user/')
-      setnowUser(collecting)
-    }catch(err) {
-      console.log(err)
-    }
+const collectInfo = async () => {
+  try{
+    const { data } = await axios.get('/dj-rest-auth/user/')
+    setnowUser(data.user)
+  }catch(err) {
+    console.log(err)
   }
+}
 
-  useEffect(() => {
-    collectInfo();
+useEffect(() => {
+  collectInfo();
+},[]);
 
-  },[])
+
   return (
-    <currentUserInfo.Provider value={nowUser}>
-      <setcurrentUserInfo.Provider value={setnowUser}>
-    
+    <CurrentUserInfo.Provider value={nowUser}>
+      <SetCurrentUserInfo.Provider value={setnowUser}>
     <div className={styles.App} >
       < NavBar />
       <Routes >
@@ -44,8 +44,8 @@ function App() {
       </Routes >  
       < Footer />
     </div>
-    </setcurrentUserInfo.Provider>
-    </currentUserInfo.Provider>
+    </SetCurrentUserInfo.Provider>
+    </CurrentUserInfo.Provider>
   );
 }
 

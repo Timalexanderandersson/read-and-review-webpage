@@ -1,12 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import styles from "../styles/Navbar.module.css";
 import { Dropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { currentUserInfo } from "../App";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { CurrentUserInfo, SetCurrentUserInfo } from "../App";
 
 export const NavBar = () => {
-  const userNow = useContext(currentUserInfo);
+  const userNow = useContext(CurrentUserInfo)
+  const setUserdata = useContext(SetCurrentUserInfo)
+  const navigate = useNavigate()
+
+  const handleLogout = async () => {
+    try{
+      await axios.post('/dj-rest-auth/logout/')
+      setUserdata(null)
+      navigate('/')
+
+    }catch(err){
+      console.log(err)
+    }
+  }
 
   return (
     <div className={styles.headbackground}>
@@ -29,7 +43,7 @@ export const NavBar = () => {
           </Nav.Item>
           <Nav.Item as="li">
         <Link to="/post" className={styles.linktext}>
-        Add review<i class="fa-solid fa-camera-retro"></i>
+        Add review<i className="fa-solid fa-camera-retro"></i>
         </Link>
       </Nav.Item>
       <Nav.Item as="li">
@@ -38,7 +52,7 @@ export const NavBar = () => {
         </Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Link to="/logout" className={styles.linktext}>
+        <Link to="/logout" onClick={handleLogout} className={styles.linktext}>
          Sign out
         </Link>
       </Nav.Item>
@@ -86,12 +100,12 @@ export const NavBar = () => {
               Explore new
             </Link>
             <Link className={styles.smallnavlink} to="/explore-new">
-            Add review<i class="fa-solid fa-camera-retro"></i>
+            Add review<i className="fa-solid fa-camera-retro"></i>
             </Link>
             <Link className={styles.smallnavlink} to="/explore-new">
               Profile
             </Link>
-            <Link className={styles.smallnavlink} to="/explore-new">
+            <Link className={styles.smallnavlink} onClick={handleLogout} to="/logout">
               Sign out
             </Link> </>
             ) : ( <>

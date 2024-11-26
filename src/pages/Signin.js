@@ -4,12 +4,12 @@ import signbox from "../styles/Signform.module.css";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { setcurrentUserInfo } from "../App";
+import { SetCurrentUserInfo } from "../App";
 
 
 export const Signin = () => {
+const setUpUser = useContext(SetCurrentUserInfo)
 
-  const settingCurrentUser = useContext(setcurrentUserInfo)
 
   const [signInForm, setsigninForm] = useState({
     username:"",
@@ -32,9 +32,9 @@ export const Signin = () => {
     event.preventDefault();
     try {
      const {data} = await axios.post('/dj-rest-auth/login/', signInForm)
-     settingCurrentUser(data.user)
+     setUpUser(data.user)
+
      navigate('/explore-new')
-      
 
     } catch(err) {
       setErrors(err.response?.data)
