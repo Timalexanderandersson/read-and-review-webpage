@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import frontpicture from "../assets/My-front-picture.jpeg"
 import pic from "../styles/Homepage.module.css"
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 const Homepage = () => {
-  
+  const [posts, setPostinfo] = useState([])
+  const [errors, setError] = useState()
+
+useEffect(() => {
+
+  const GettingPosts = async () => {
+    try{
+      const { data } = await axios.get('/post/')
+      setPostinfo(data.results)
+    } catch(err){
+      setError(err)
+    }
+  }
+  GettingPosts();
+},[])
 
   return (
   
@@ -26,7 +42,15 @@ const Homepage = () => {
            <div className={pic.bookboxdiv}>
             <h2>New book reviews</h2>
             <div className={pic.ratingdiv}>
-
+              {posts.map((post, dxk) =>(
+                <div key={dxk} className={pic.divforbook}>
+                   <img src={post.image_post} className={pic.postpictures}/>
+                   <Link to="/" className={pic.titlename}>
+                   <h3>{post.title}</h3>
+                   </Link>
+                </div>
+              )
+              )}
             </div>
            </div>
     </div>
