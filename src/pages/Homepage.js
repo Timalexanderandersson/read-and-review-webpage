@@ -16,7 +16,7 @@ useEffect(() => {
       const { data } = await axios.get('/post/')
       setPostinfo(data.results)
     } catch(err){
-      setError(err)
+      setError(errors)
     }
   }
   GettingPosts();
@@ -44,7 +44,7 @@ useEffect(() => {
             <div className={pic.ratingdiv}>
               {posts.map((post, dxk) =>(
                 <div key={dxk} className={pic.divforbook}>
-                   <img src={post.image_post} className={pic.postpictures}/>
+                   <img src={post.image_post} className={pic.postpictures} alt={post.title}/>
                    <Link to="/" className={pic.titlename}>
                    <h3>{post.title}</h3>
                    </Link>

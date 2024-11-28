@@ -1,0 +1,11 @@
+.site{
+    display: flex;
+    justify-content: center;
+}
+.bigdiv {
+    margin-top: 10vh;
+    width:40vh;
+    height: 50vh;
+    background-color: rgb(241, 240, 240);
+    box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}

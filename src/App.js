@@ -7,6 +7,7 @@ import { Signup } from "./pages/Signup.js"
 import "./api/axiosBasic.js"
 import { Signin } from "./pages/Signin.js";
 import Homepage from "./pages/Homepage.js";
+import Createpostpage from "./pages/Createpostpage.js";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes >
         <Route exact path="/" element={<Homepage/>} />
         <Route exact path="/signin" element={<Signin />}/>
+        <Route exact path="/add-review" element={<Createpostpage />} />
         <Route exact path="/explore-new" element={<h1>explore page</h1>} />
         <Route exact path="/Register" element={<Signup/>}/>
         <Route path="*" element={<h1>Page not found!</h1>}/>

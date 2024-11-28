@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Nav from "react-bootstrap/Nav";
 import styles from "../styles/Navbar.module.css";
 import { Dropdown } from "react-bootstrap";
@@ -43,7 +43,7 @@ export const NavBar = () => {
             </Link>
           </Nav.Item>
           <Nav.Item as="li">
-        <Link to="/post" className={styles.linktext}>
+        <Link to="/add-review" className={styles.linktext}>
         Add review<i className="fa-solid fa-camera-retro"></i>
         </Link>
       </Nav.Item>
@@ -59,6 +59,7 @@ export const NavBar = () => {
       </Nav.Item>
         </Nav>
         ) : (
+
           <Nav defaultActiveKey="/home" as="ul" className={styles.linkshiding}>
           <Nav.Item as="li">
             <Link to="/" className={styles.linktext}>
@@ -79,6 +80,9 @@ export const NavBar = () => {
         <Link to="/Register" className={styles.linktext}>
           Register
         </Link>
+        <Link to="/add-review" className={styles.linktext}>
+          Add review
+          </Link>
       </Nav.Item>
         </Nav>
 
@@ -100,7 +104,7 @@ export const NavBar = () => {
             <Link className={styles.smallnavlink} to="/explore-new">
               Explore new
             </Link>
-            <Link className={styles.smallnavlink} to="/explore-new">
+            <Link className={styles.smallnavlink} to="/add-review">
             Add review<i className="fa-solid fa-camera-retro"></i>
             </Link>
             <Link className={styles.smallnavlink} to="/explore-new">
