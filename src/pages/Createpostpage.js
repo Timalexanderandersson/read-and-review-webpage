@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import styles from "../styles/Creatingpost.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Createpostpage = () => {
   const [usepics, setPictures] = useState();
+  const navigaton = useNavigate();
 
   const [posts, setupPost] = useState({
     titel: "",
@@ -24,6 +26,7 @@ const Createpostpage = () => {
     event.preventDefault();
     try {
       await axios.post("/post/", posts);
+      navigaton('/explore-new')
     } catch (error) {
 
     }

@@ -27,14 +27,13 @@ const Explorepage = () => {
         <div className={styles.colordiv}>
           {posts.map((post, jdk)=>(
             <div key={jdk} className={styles.bookdiv}>
-            <h3>{post.title}</h3>
+            <h3 className="text-center">{post.title}</h3>
             <img src={post.image_post} alt={post.image_post} className={styles.pictures}/>
-            <p>{post.description}</p>
-            <hr></hr>
-            <i className="fa-regular fa-comment"></i>
+            <p className="text-center">{post.description}</p>
+
+            <i className="fa-regular fa-comment mt-4"></i>
             </div>
           ))}
-        
         </div>
       </div>
     </div>
