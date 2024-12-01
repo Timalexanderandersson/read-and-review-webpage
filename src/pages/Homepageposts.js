@@ -14,7 +14,7 @@ const Homepageposts = ({ posts }) => {
               className={pic.postpictures}
               alt={post.title}
             />
-            <Link to="/" className={pic.titlename}>
+            <Link to={`/post/${post.id}`} className={pic.titlename}>
               <h3>{post.title}</h3>
             </Link>
           </div>

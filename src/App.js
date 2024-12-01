@@ -22,7 +22,7 @@ function App() {
         <Route exact path="/signin" element={<Signin />}/>
         <Route exact path="/add-review" element={<Createpostpage />} />
         <Route exact path="/explore-new" element={<Explorepage />} />
-        <Route exact path="/post/:id" element={<Explorepage />} />
+        <Route exact path="/post/:id" element={<Pageinformation />} />
         <Route exact path="/Register" element={<Signup/>}/>
         <Route path="*" element={<h1>Page not found!</h1>}/>
       </Routes >  
