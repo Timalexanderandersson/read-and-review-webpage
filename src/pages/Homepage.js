@@ -3,11 +3,14 @@ import frontpicture from "../assets/My-front-picture.jpeg"
 import pic from "../styles/Homepage.module.css"
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Homepageposts from "./Homepageposts";
 
 
 const Homepage = () => {
   const [posts, setPostinfo] = useState([])
   const [errors, setError] = useState()
+  const [pageNow, setpageNow] = useState(1)
+  const [postEachpage] = useState(4)
 
 useEffect(() => {
 
@@ -21,6 +24,11 @@ useEffect(() => {
   }
   GettingPosts();
 },[])
+
+const lastpostcount = pageNow * postEachpage;
+const firstpostcount = lastpostcount - postEachpage;
+const currentPost = posts.slice(firstpostcount, lastpostcount)
+
 
   return (
   
@@ -41,17 +49,7 @@ useEffect(() => {
            </div>
            <div className={pic.bookboxdiv}>
             <h2>New book reviews</h2>
-            <div className={pic.ratingdiv}>
-              {posts.map((post, dxk) =>(
-                <div key={dxk} className={pic.divforbook}>
-                   <img src={post.image_post} className={pic.postpictures} alt={post.title}/>
-                   <Link to="/" className={pic.titlename}>
-                   <h3>{post.title}</h3>
-                   </Link>
-                </div>
-              )
-              )}
-            </div>
+            <Homepageposts posts={currentPost}/>
            </div>
     </div>
   </div>
