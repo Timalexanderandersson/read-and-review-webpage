@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/explore.module.css";
 import axios from "axios";
+import Posts from "../components/Posts";
+import Paginationfile from "../components/Paginationfile";
 
 const Explorepage = () => {
   const [posts, setPostinfo] = useState([])
   const [errors, setError] = useState()
+  const [pageNow, setpageNow] = useState(1)
+  const [postEachpage] = useState(4)
 
   useEffect(() => {
     const GettingPosts = async () => {
@@ -17,7 +21,11 @@ const Explorepage = () => {
     }
     GettingPosts();
   },[])
+  const lastpostcount = pageNow * postEachpage;
+  const firstpostcount = lastpostcount - postEachpage;
+  const currentPost = posts.slice(firstpostcount, lastpostcount)
 
+  const paginate = (pageNumber) => setpageNow(pageNumber)
 
 
   return (
@@ -25,16 +33,10 @@ const Explorepage = () => {
       <div className={styles.centerbig}>
       <h2>Explore new reviews</h2>
         <div className={styles.colordiv}>
-          {posts.map((post, jdk)=>(
-            <div key={jdk} className={styles.bookdiv}>
-            <h3 className="text-center">{post.title}</h3>
-            <img src={post.image_post} alt={post.image_post} className={styles.pictures}/>
-            <p className="text-center">{post.description}</p>
-
-            <i className="fa-regular fa-comment mt-4"></i>
-            </div>
-          ))}
+      <Posts posts={currentPost}/>
+      <Paginationfile postEachpage={postEachpage} totalPost={posts.length} paginate={paginate} />
         </div>
+
       </div>
     </div>
   );

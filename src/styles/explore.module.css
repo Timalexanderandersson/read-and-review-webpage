@@ -2,6 +2,8 @@
     margin-top: 8vh;
     display: inline-block;
     justify-items: center;
+    margin-bottom: 7vh;
+    height: auto;
 
 }
 .colordiv{
@@ -15,10 +17,18 @@
     background-color: rgb(241, 240, 240);
     box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.2);
     padding-top: 2vh;
-    margin-bottom: 7vh;
+    margin-bottom: 10vh;
     border-radius: 10px;
+    height: auto;
+    overflow:hidden;
+}
+.textp{
+    width: 80%;
+    height: 4vh;
+    overflow:hidden;
+    text-align:center;
 }
 .pictures{
     width: 25vh;
-    height: 25vh;
+    height:25vh;
 }
