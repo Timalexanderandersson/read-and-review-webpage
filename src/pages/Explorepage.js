@@ -34,7 +34,11 @@ const Explorepage = () => {
       <h2>Explore new reviews</h2>
         <div className={styles.colordiv}>
       <Posts posts={currentPost}/>
-      <Paginationfile postEachpage={postEachpage} totalPost={posts.length} paginate={paginate} />
+      <Paginationfile 
+      postEachpage={postEachpage} 
+      totalPost={posts.length} 
+      paginate={paginate}
+      className={styles.pagination} />
         </div>
 
       </div>

@@ -4,6 +4,7 @@
     justify-items: center;
     margin-bottom: 7vh;
     height: auto;
+    justify-content: center;
 
 }
 .colordiv{
@@ -11,6 +12,8 @@
     justify-content: center;
     width: 35vh;
     height: auto;
+    justify-items: center;
+    margin-bottom: 6vh;
 }
 .bookdiv{
     justify-items: center;
@@ -31,4 +34,7 @@
 .pictures{
     width: 25vh;
     height:25vh;
+}
+.pagination{
+
 }
