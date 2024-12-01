@@ -9,6 +9,7 @@ import { Signin } from "./pages/Signin.js";
 import Homepage from "./pages/Homepage.js";
 import Createpostpage from "./pages/Createpostpage.js";
 import Explorepage from "./pages/Explorepage.js";
+import Pageinformation from "./pages/Pageinformation.js";
 
 
 

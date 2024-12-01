@@ -1,14 +1,16 @@
 import React from 'react'
 import styles from "../styles/explore.module.css"
+import { Link } from 'react-router-dom'
 
 const Posts = ({posts}) => {
-
 
   return (
     <div>
         {posts.map((post, jdk)=>(
             <div key={jdk} className={styles.bookdiv}>
-            <h3 className="text-center">{post.title}</h3>
+              <Link to={`/post/${post.id}`}>
+              <h3 className="text-center">{post.title}</h3>
+              </Link>
             <p className="text-center mt-2"> <strong>{post.username}</strong></p>
             <img src={post.image_post} alt={post.image_post} className={styles.pictures}/>
             <h6 className="text-center mt-2">Description</h6>
