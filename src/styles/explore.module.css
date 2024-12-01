@@ -35,6 +35,7 @@
     width: 25vh;
     height:25vh;
 }
-.pagination{
-
+.headertext{
+    text-decoration: none;
+    color: black;
 }
