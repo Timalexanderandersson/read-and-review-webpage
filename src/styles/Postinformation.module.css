@@ -1,8 +1,16 @@
+.carry{
+    margin-bottom: 15vh;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
 .bigdiv{
     display: inline-block;
     justify-items: center;
     margin-top: 10vh;
-    height: auto;
+
 
 }
 .bookdiv{
@@ -12,9 +20,23 @@
     justify-items: center;
     width:40vh;
     height: auto;
-    padding-bottom: 5vh;
+    
 }
 .pictures {
     width: 20vh;
     height: 20vh;
+}
+.textarea{
+    height:auto;
+    padding:4px;
+}
+.line{
+    margin: 3vh auto 0;
+    width: 85%;
+}
+.editbutton{
+    color:black;
+}
+.editbutton:hover {
+    color:white;
 }
