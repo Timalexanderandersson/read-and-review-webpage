@@ -23,9 +23,14 @@ const Pageinformation = () => {
     },[id])
 
   return (
+    <div className='container'>
+        <div>
+            <div>
+            <h1>{postsData.title}</h1>
 
-    <div>
-        <h1>{postsData.title}</h1>
+            </div>
+        </div>
+        
     </div>
   )
 }
