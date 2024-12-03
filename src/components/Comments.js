@@ -25,7 +25,7 @@ const Comments = ({comments }) => {
       {comments.map((comment, jkd) =>(
           <div key={jkd} className={styles.divinside}> 
           <p className={styles.username}><strong>{comment.username}</strong></p>
-          <p>{comment.comment}</p>
+          <p className='mr-3'>{comment.comment}</p>
           { userNow?.username === comment.username && (
             <div className={styles.iconbutton}>
             <i className="fa-solid fa-trash" onClick={() =>handeldeletecomment(comment)}></i>
