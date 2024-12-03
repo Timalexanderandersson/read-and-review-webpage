@@ -31,6 +31,7 @@ const Pageinformation = () => {
     gettingid();
   }, [id]);
 
+
   const ownerpost = userNow?.username === postsData.username;
 
   return (
@@ -78,8 +79,9 @@ const Pageinformation = () => {
         <p className="text-center mb-4">Need to be sign in to comment</p>
       )}
       <hr className={styles.line} />
+      <div>
       <Comments comments={comments}/>
-
+      </div>
     </div>
   );
 };

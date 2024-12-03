@@ -1,0 +1,16 @@
+.divcomments{
+    display:flex;
+    flex-direction: column;
+}
+.divinside{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+
+}
+.username{
+    margin-right:5vh;
+}
+.iconbutton{
+    margin-top: 2vh;
+}
