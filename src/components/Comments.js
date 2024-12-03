@@ -1,10 +1,14 @@
 import React from 'react'
+import styles from "../styles/comments.module.css"
 
 const Comments = ({comments}) => {
   return (
-    <div>
+    <div className={styles.divcomments}>
         {comments.map((comment, jkd) =>(
-           <p>{comment.comment}</p>
+          <div key={jkd}>
+            <p><strong>{comment.username}</strong></p>
+            <p>{comment.comment}</p>
+          </div>
         ))}
     </div>
   )

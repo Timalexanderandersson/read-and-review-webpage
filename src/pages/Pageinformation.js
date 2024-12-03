@@ -4,6 +4,7 @@ import styles from "../styles/Postinformation.module.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CurrentUserInfo } from "../users/userInformation";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
+import Comments from "../components/Comments";
 
 const Pageinformation = () => {
   const [postsData, setpostsData] = useState({});
@@ -77,6 +78,7 @@ const Pageinformation = () => {
         <p className="text-center mb-4">Need to be sign in to comment</p>
       )}
       <hr className={styles.line} />
+      <Comments comments={comments}/>
 
     </div>
   );
