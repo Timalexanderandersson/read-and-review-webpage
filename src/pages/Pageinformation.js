@@ -1,23 +1,28 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import styles from "../styles/Postinformation.module.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { CurrentUserInfo } from "../users/userInformation";
+import { Button, FloatingLabel, Form } from "react-bootstrap";
 
 const Pageinformation = () => {
   const [postsData, setpostsData] = useState({});
-  const [usecomment, setcomments] = useState(null)
-  const [error, setErros] = useState();
+  const [comments, setcommentData] = useState([]);
+
+  const [erros, setErros] = useState();
   const { id } = useParams();
+  const navigate = useNavigate();
   const userNow = useContext(CurrentUserInfo);
 
+  // getting the post id and comment id on post
   useEffect(() => {
-
-    // getting the post id on post
     const gettingid = async () => {
       try {
-        const { data } = await axios.get(`/post/${id}`);
-        setpostsData(data);
+        const { data: getPost } = await axios.get(`/post/${id}`);
+        const { data: commentdata } = await axios.get(`/comments/?post=${id}`);
+        setpostsData(getPost);
+        setcommentData(commentdata.results);
+        navigate(`/post/${id}`)
       } catch (error) {
         setErros(error.message);
       }
@@ -45,15 +50,34 @@ const Pageinformation = () => {
               <strong>Description</strong>
             </p>
             <p className={styles.textarea}>{postsData.description}</p>
-            {ownerpost && (<Link to={`/post/${id}/edit`} className={styles.editbutton}>
-              <i className="fa-regular fa-pen-to-square"></i>
-            </Link>)}
+            {ownerpost && (
+              <Link to={`/post/${id}/edit`} className={styles.editbutton}>
+                <i className="fa-regular fa-pen-to-square"></i>
+              </Link>
+            )}
           </div>
         </div>
       </div>
       <hr className={styles.line} />
-      <p className="text-center mb-4">Need to be sign in to comment</p>
+      {userNow ? (
+        <Form className="d-flex justify-content-center">
+          <FloatingLabel controlId="floatingTextarea" className="mb-3">
+            <Form.Control
+              as="textarea"
+              placeholder="Leave a comment here"
+              name="comment"
+              type="comment"
+            />
+          </FloatingLabel>
+          <Button className="mr-5" variant="outline-secondary" type="submit">
+            post
+          </Button>
+        </Form>
+      ) : (
+        <p className="text-center mb-4">Need to be sign in to comment</p>
+      )}
       <hr className={styles.line} />
+
     </div>
   );
 };

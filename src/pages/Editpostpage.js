@@ -2,15 +2,24 @@ import React, { useContext, useEffect, useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import styles from "../styles/Creatingpost.module.css";
 import axios from "axios";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { CurrentUserInfo } from "../users/userInformation";
+import { useNavigate, useParams } from "react-router-dom";
+import created from "../styles/editpost.module.css";
 
 const Editpostpage = () => {
   const [usepics, setPictures] = useState();
   const navigaton = useNavigate();
   const { id } = useParams();
-  const userNow = useContext(CurrentUserInfo)
 
+  // delete post/with id.
+  const handeldeletepost = async () => {
+    try {
+      await axios.delete(`/post/${id}`)
+      navigaton('/')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+// collecting posts
   const [posts, setupPost] = useState({
     title: "",
     description: "",
@@ -24,7 +33,7 @@ const Editpostpage = () => {
       [event.target.name]: event.target.value,
     });
   };
-
+// handle function for the post edit submit.
   const handlePostsubmit = async (event) => {
     event.preventDefault();
     const newData =  new FormData();
@@ -38,7 +47,7 @@ const Editpostpage = () => {
       navigaton("/explore-new");
     } catch (error) {}
   };
-
+// give the user a preview
   const handelingPicture = (event) => {
     const pictures = event.target.files[0];
     const collectingpic = URL.createObjectURL(pictures);
@@ -52,20 +61,21 @@ const Editpostpage = () => {
   useEffect(() => {
     // getting the post id for edit
     const gettingidpost = async () => {
-      try {
-        const { data } = await axios.get(`/post/${id}`);
-        setupPost({
-          title: data.title,
-          description: data.description,
-          image_post: data.image_post,
-        })
-        setPictures(data.image_post)
-      } catch (error) {
-        console.log(error)
-      }
+        try {
+          const { data } = await axios.get(`/post/${id}`);
+          setupPost({
+            title: data.title,
+            description: data.description,
+            image_post: data.image_post,
+          })
+          setPictures(data.image_post)
+        } catch (error) {
+          console.log(error)
+        }
     };
     gettingidpost();
   }, [id]);
+
 
   return (
     <div>
@@ -112,7 +122,15 @@ const Editpostpage = () => {
                 variant="outline-secondary"
                 type="submit"
               >
-                create post
+                Save post
+              </Button>
+              <Button
+              className={created.deletbutton}
+                variant="danger"
+                type="delete"
+                onClick={handeldeletepost}
+              >
+                Delete post 
               </Button>
             </div>
           </Form>
