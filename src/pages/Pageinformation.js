@@ -63,7 +63,7 @@ const Pageinformation = () => {
       <hr className={styles.line} />
       {userNow ? (
         <Form className="d-flex justify-content-center">
-          <FloatingLabel controlId="floatingTextarea" className="mb-3">
+          <FloatingLabel controlId="floatingTextarea" className={styles.textingarea}>
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here"
@@ -71,7 +71,7 @@ const Pageinformation = () => {
               type="comment"
             />
           </FloatingLabel>
-          <Button className="mr-5" variant="outline-secondary" type="submit">
+          <Button className={styles.buttonsubmit} variant="outline-secondary" type="submit">
             post
           </Button>
         </Form>

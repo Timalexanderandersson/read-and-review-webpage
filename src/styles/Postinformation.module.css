@@ -40,3 +40,19 @@
 .editbutton:hover {
     color:white;
 }
+.buttonsubmit{
+    margin-top: 2vh;
+}
+.textingarea{
+    height: auto;
+    margin-right: 2vh;
+    margin-top: 1vh;
+}
+
+/*media query for 768px*/
+@media (min-width: 540px){
+    .textingarea{
+       width: 30vh;
+    }
+    
+}

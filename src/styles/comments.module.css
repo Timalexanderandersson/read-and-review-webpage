@@ -4,14 +4,42 @@
 }
 .divinside{
     display:flex;
-    justify-content: center;
+    justify-content:flex-start;
     width: 100%;
 
 }
 .username{
-    margin-right:5vh;
+    margin-left: 4vh;
+    margin-right: 7vh;
 }
 .iconbutton{
     margin-top: 2vh;
     margin-left:1vh;
+}
+/*media query for 540px*/
+@media (min-width: 540px){
+
+    .username{
+        margin-left: 10vh;
+        margin-right: 30%;
+    }
+
+}
+/*media query for 768px*/
+@media (min-width: 768px){
+
+    .username{
+        margin-left: 15vh;
+        margin-right: 40%;
+    }
+
+}
+/*media query for 100px*/
+@media (min-width: 1000px){
+
+    .username{
+        margin-left: 25vh;
+        margin-right: 30%;
+    }
+
 }
