@@ -9,11 +9,31 @@ import Comments from "../components/Comments";
 const Pageinformation = () => {
   const [postsData, setpostsData] = useState({});
   const [comments, setcommentData] = useState([]);
-
+  const [comment, setcomment] = useState('')
   const [erros, setErros] = useState();
   const { id } = useParams();
   const navigate = useNavigate();
   const userNow = useContext(CurrentUserInfo);
+
+
+  const handlechange = (event) =>{
+    setcomment(event.target.value)
+  }
+
+  const handlepostingcomment = async (event) =>{
+    event.preventDefault();
+    try {
+      const { data } = await axios.post("/comments/", {
+        post: id,
+        comment: comment
+      });
+      setcommentData((prevComments) => [data, ...prevComments]);
+      setcomment('')
+      navigate(`/post/${id}`);
+    } catch (error) {
+      setErros(error.message)
+    }
+  }
 
   // getting the post id and comment id on post
   useEffect(() => {
@@ -62,13 +82,15 @@ const Pageinformation = () => {
       </div>
       <hr className={styles.line} />
       {userNow ? (
-        <Form className="d-flex justify-content-center">
+        <Form className="d-flex justify-content-center" onSubmit={handlepostingcomment}>
           <FloatingLabel controlId="floatingTextarea" className={styles.textingarea}>
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here"
               name="comment"
               type="comment"
+              value={comment}
+              onChange={handlechange}
             />
           </FloatingLabel>
           <Button className={styles.buttonsubmit} variant="outline-secondary" type="submit">

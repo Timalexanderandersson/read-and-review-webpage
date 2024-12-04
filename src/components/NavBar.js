@@ -80,9 +80,6 @@ export const NavBar = () => {
         <Link to="/Register" className={styles.linktext}>
           Register
         </Link>
-        <Link to="/add-review" className={styles.linktext}>
-          Add review
-          </Link>
       </Nav.Item>
         </Nav>
 

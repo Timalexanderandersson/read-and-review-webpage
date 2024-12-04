@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from "../styles/comments.module.css"
 import { CurrentUserInfo } from '../users/userInformation';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -8,6 +8,7 @@ const Comments = ({comments }) => {
   const userNow = useContext(CurrentUserInfo);
   const { id } = useParams();
   const navigate = useNavigate()
+  const [candelete, setdelete] = useState('')
  
      // delete post/with id.
      const handeldeletecomment = async (comment) => {
