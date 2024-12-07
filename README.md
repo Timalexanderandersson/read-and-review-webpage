@@ -1,6 +1,6 @@
 # Read & Review
-This is Read and review a fullstack project. the  website is for people who enjoy reading and  who love to share and to get the thougths of recently read book and comment on them, or discover books that you have not read yet. you can post reviews on the website , and connect with others on the site!
-its made with React  and django rest, and bootstrap.
+This is Read & review it is a fullstack project. The website is for people who enjoy reading and who love to share and to get the thougths of recently read books. Or to just discover books that you have not read yet. you can post reviews on the website , and connect with others on the site!
+Its made with React and Django REST, and bootstrap.
 [Read & Review here!](https://read-and-review-bdeebdc26c44.herokuapp.com/)
 ![alt text](src/assets/minbilf.PNG)
 
