@@ -35,7 +35,7 @@ const currentPost = posts.slice(firstpostcount, lastpostcount)
     <div className={pic.bigdiv}>
     <div >
     <div>
-        <img src={frontpicture} className={pic.frontpicture}></img>
+        <img src={frontpicture} className={pic.frontpicture} alt={frontpicture}></img>
     <div className="container">
     </div>
     <div className={pic.readtext}>

@@ -10,10 +10,10 @@ its made with React  and django rest, and bootstrap.
  - [Wireframes](#wireframes)
  - [Agile methodology](#Agile-methodology)
  - [Website Features](#Features)
- - [To be features](#te-be-features)
+ - [To be features](#to-be-features)
  - [backend](#django-rest)
- - [Installed Libraries](#Libraries)
- - [Technical Stack](#Technical-Stack)
+ - [Installed Libraries](#installed-libraries)
+ - [Technical Stack](#technical-stack)
  - [Testing](#testing)
  - [Validation](#validation)
  - [Testing in React](#react-test)
@@ -162,7 +162,7 @@ Here is the wirefram for mobile.
 <img src="src/assets/desktop-inside-post.PNG">
 </details>
 
-## Agile methodology
+# Agile methodology
 Was using Agile methodology while working on the project Read & Review. which worked good, following the user storys and checking them of one by one. making sure they was living up to acceptance criteria.
 
 #### the 3 steps in the user story.
@@ -191,7 +191,7 @@ When the user story is done.
 
 * lucid.app to create the diagrams
 
-## Features
+# Features
 
 ### navbar
 * in the navbar if logged in(explore-page, add-review, signout, homepage )
@@ -276,3 +276,69 @@ When the user story is done.
 <br>
 <img src="src/assets/signin.PNG">
 </details>
+
+# To be features
+
+* planning on making a profile page with an bio for information.
+* and rating system with stars.
+* and be able to comment on others comments.
+
+# Django Rest backend
+[Django rest API](https://github.com/Timalexanderandersson/Read-review-Django-API)
+
+[heroku live](https://read-review-django-api-b8922a0fef0a.herokuapp.com/)
+
+# Installed Libraries
+asgiref==3.8.1
+bcrypt==4.2.0
+cloudinary==1.34.0
+dj-database-url==0.5.0
+dj-rest-auth==2.1.9
+Django==4.2
+django-allauth==0.50.0
+django-cloudinary-storage==0.3.0
+django-cors-headers==4.6.0
+django-filter==24.3
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.3.1
+gunicorn==23.0.0
+oauthlib==3.2.2
+pillow==11.0.0
+psycopg2==2.9.10
+PyJWT==2.10.0
+python3-openid==3.2.0
+pytz==2021.1
+requests-oauthlib==2.0.0
+sqlparse==0.5.2
+urllib3==1.26.20
+
+# Technical Stack
+* Django REST: framework for creating API
+* React: framework for frontend.
+* CSS: style the site.
+* Bootstrap.js: style the website.
+* Python: back-end for django rest api.
+* Gitpod: development
+* Git: version control
+* PostgreSQL: Database
+* Lucidchart: models Diagram.
+* Heroku: for deploying front-end and back-end.
+
+# Testing
+
+### Lighthouse
+
+#### Desktop Lighthouse testing
+<details>
+<summary>Desktop results</summary>
+<br>
+<img src="">
+</details>
+
+#### Mobile Lighthouse
+<details>
+<summary>Mobile results</summary>
+<br>
+<img src="">
+</details>
+
