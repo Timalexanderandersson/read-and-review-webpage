@@ -48,11 +48,6 @@ export const NavBar = () => {
         </Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Link to="/profile" className={styles.linktext}>
-         Profile
-        </Link>
-      </Nav.Item>
-      <Nav.Item as="li">
         <Link to="/logout" onClick={handleLogout} className={styles.linktext}>
          Sign out
         </Link>
@@ -104,9 +99,7 @@ export const NavBar = () => {
             <Link className={styles.smallnavlink} to="/add-review">
             Add review<i className="fa-solid fa-camera-retro"></i>
             </Link>
-            <Link className={styles.smallnavlink} to="/explore-new">
-              Profile
-            </Link>
+       
             <Link className={styles.smallnavlink} onClick={handleLogout} to="/logout">
               Sign out
             </Link> </>

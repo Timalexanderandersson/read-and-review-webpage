@@ -8,7 +8,6 @@ const Comments = ({comments }) => {
   const userNow = useContext(CurrentUserInfo);
   const { id } = useParams();
   const navigate = useNavigate()
-  const [candelete, setdelete] = useState('')
  
      // delete post/with id.
      const handeldeletecomment = async (comment) => {
