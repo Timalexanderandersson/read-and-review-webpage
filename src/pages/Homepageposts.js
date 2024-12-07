@@ -2,7 +2,6 @@ import React from "react";
 import pic from "../styles/Homepage.module.css";
 import { Link } from "react-router-dom";
 
-
 const Homepageposts = ({ posts }) => {
   return (
     <div>

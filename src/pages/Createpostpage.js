@@ -26,21 +26,19 @@ const Createpostpage = () => {
     event.preventDefault();
     try {
       await axios.post("/post/", posts);
-      navigaton('/explore-new')
-    } catch (error) {
-
-    }
+      navigaton("/explore-new");
+    } catch (error) {}
   };
 
   const handelingPicture = (event) => {
-    const pictures = event.target.files[0]
-    const collectingpic = URL.createObjectURL(pictures)
-    setPictures(collectingpic)
+    const pictures = event.target.files[0];
+    const collectingpic = URL.createObjectURL(pictures);
+    setPictures(collectingpic);
     setupPost({
       ...posts,
-      image_post: pictures
-    })
-  }
+      image_post: pictures,
+    });
+  };
 
   return (
     <div>

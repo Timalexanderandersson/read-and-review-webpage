@@ -18,9 +18,9 @@ its made with React  and django rest, and bootstrap.
  - [Validation](#validation)
  - [Testing in React](#react-test)
 - [Bugs](#bugs)
-- [Deployment](#Deployment)
-- [Credits](#Credits)
-- [Acknowledgements](#Acknowledgements)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
  
  # Planning
  ### User stories om github
@@ -332,13 +332,82 @@ urllib3==1.26.20
 <details>
 <summary>Desktop results</summary>
 <br>
-<img src="">
+<img src="src/assets/desktoplighthouse.PNG">
 </details>
 
 #### Mobile Lighthouse
 <details>
 <summary>Mobile results</summary>
 <br>
-<img src="">
+<img src="src/assets/desktoplighthouse.PNG">
 </details>
 
+## Validation
+
+* W3C validator shows.
+![alt text](src/assets/nohtmllll.PNG)
+
+* W3C jigsaw.
+![alt text](src/assets/csss.PNG)
+
+* JSHint on all pages.
+![alt text](src/assets/deletecomment.PNG)
+
+* CI python Linter
+* tested in all serializers and views.
+![alt text](src/assets/dawdawdawd.PNG)
+
+## Testing in React. 
+dagens göra!
+## Bugs
+
+#### No bugs found inside the project.
+### unsolved bugs
+#### None.
+
+
+## Deployment
+
+### Create project repository
+
+ Log in to GitHub then use the Code institute for making the project
+ click to "use this template" 
+ create a repository with name in the Repository name
+ then create Repository 
+
+### Create heroku app
+ Login to the heroku platform
+go to the dropdown in homepage and create app
+give the app a project name, and choose the location you are in.
+
+### deploy heroku application
+press the settings tab when clicked into your new application project.
+go to config vars section.
+and installed ALLOWED_HOST, CLIENT_ORIGIN, CLIENT_ORIGIN_DEV,CLOUDINARY_URL,DATABASE_URL,SECRET_KEY.for backend.
+add key of DISABLE_COLLECTSTATIC and  the value of 1
+install gunicorn in the command in the terminal 
+update the requirements.txt.
+Create a Procfile.
+in settings put the '.herokuapp.com' to ALLOWED_HOSTS.
+go to deploy in heroku go down to "Manual deploy" and press to Deploy Branch.
+
+## Credits
+### Help from websites.
+* cloudinary.com for uploading pictures.
+* https://www.pexels.com/ for pictures.
+* https://www.geeksforgeeks.org 
+* how-to-setup-404-page-in-react-routing/ 404 page.
+* https://stackoverflow.com/questions/3715047/
+* how-to-reload-a-page-using-javascript
+* code institute project for Django REST framework.
+* and moments project from code institute for help with my React.
+* https://www.w3schools.com/
+* https://favicon.io/favicon-converter/ för favicon
+* google font Crimson Text
+* https://stackoverflow.com/questions/43692479/how-to-upload-an-image-in-react-js
+* [cooler](https://coolors.co/) website for colors on the website.
+https://www.youtube.com/watch?v=IYCa1F-OWmk
+* balsamiq for making wireframe.
+* lucid.app for making my models.
+## Acknowledgements
+* and thanks my mentor Spence for help with guidance with my project.

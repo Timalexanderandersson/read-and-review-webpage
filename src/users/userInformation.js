@@ -14,9 +14,7 @@ export const UserInformation = ({ children }) => {
       const { data } = await axios.get("/dj-rest-auth/user/");
       setnowUser(data.user);
       navigation("/");
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   useEffect(() => {
