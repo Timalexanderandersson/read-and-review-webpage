@@ -8,5 +8,5 @@ test("reder the navbar", () => {
         <NavBar />
     </Router>
   );
-
+  
 });

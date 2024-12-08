@@ -1,6 +1,5 @@
 import { rest } from 'msw';
-
-const baseURL = 'https://read-review-django-api-b8922a0fef0a.herokuapp.com/'
+export const baseURL = 'https://read-review-django-api-b8922a0fef0a.herokuapp.com/'
 
 export const handling = [
     rest.get(`${baseURL}dj-rest-auth/user/`, (req, res, ctx) => {

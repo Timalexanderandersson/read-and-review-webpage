@@ -64,6 +64,7 @@ Here is the wirefram for mobile.
 </details>
 
 * inside post/sign in, user can comment on post, and delete, comment.
+* made with component in react.
 <details>
 <summary>Inside post sign in.</summary>
 <br>
@@ -149,6 +150,7 @@ Here is the wirefram for mobile.
 </details>
 
 * inside post/sign in, user can comment on post, and delete, comment.
+* made with component in react.
 <details>
 <summary>Inside post</summary>
 <br>
@@ -376,15 +378,11 @@ dagens göra!
  then create Repository 
 
 ### Create heroku app
- Login to the heroku platform
+Login to the heroku platform
 go to the dropdown in homepage and create app
 give the app a project name, and choose the location you are in.
 
 ### deploy heroku application
-press the settings tab when clicked into your new application project.
-go to config vars section.
-and installed ALLOWED_HOST, CLIENT_ORIGIN, CLIENT_ORIGIN_DEV,CLOUDINARY_URL,DATABASE_URL,SECRET_KEY.for backend.
-add key of DISABLE_COLLECTSTATIC and  the value of 1
 install gunicorn in the command in the terminal 
 update the requirements.txt.
 Create a Procfile.
