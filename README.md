@@ -360,7 +360,6 @@ urllib3==1.26.20
 ![alt text](src/assets/dawdawdawd.PNG)
 
 ## Testing in React. 
-dagens göra!
 ## Bugs
 
 #### No bugs found inside the project.
