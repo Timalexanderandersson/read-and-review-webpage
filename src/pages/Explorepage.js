@@ -30,7 +30,7 @@ const Explorepage = () => {
   return (
     <div className={styles.bigdivcontain}>
       <div className={styles.centerbig}>
-        <h2>Explore new reviews</h2>
+        <h2 className="text-center">Explore new reviews</h2>
         <div className={styles.colordiv}>
           <Posts posts={currentPost} />
           <Paginationfile

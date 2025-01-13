@@ -19,13 +19,14 @@ const Comments = ({ comments }) => {
   };
 
   return (
+    <div>
     <div className={styles.divcomments}>
       {comments.map((comment, jkd) => (
         <div key={jkd} className={styles.divinside}>
-          <p className={styles.username}>
+          <p className="text-center">
             <strong>{comment.username}</strong>
           </p>
-          <p className="mr-3">{comment.comment}</p>
+          <p className="text-center">{comment.comment}</p>
           {userNow?.username === comment.username && (
             <div className={styles.iconbutton}>
               <i
@@ -34,8 +35,10 @@ const Comments = ({ comments }) => {
               ></i>
             </div>
           )}
+          <hr className={styles.hrlinebig}/>
         </div>
       ))}
+    </div>
     </div>
   );
 };
