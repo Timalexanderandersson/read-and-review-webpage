@@ -28,7 +28,7 @@ const Explorepage = () => {
   const paginate = (pageNumber) => setpageNow(pageNumber);
 
   return (
-    <div className="container d-flex justify-content-center">
+    <div className={styles.bigdivcontain}>
       <div className={styles.centerbig}>
         <h2>Explore new reviews</h2>
         <div className={styles.colordiv}>

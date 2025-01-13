@@ -72,7 +72,7 @@ const Pageinformation = () => {
             <p className={styles.textarea}>{postsData.description}</p>
             {ownerpost && (
               <Link to={`/post/${id}/edit`} className={styles.editbutton}>
-                <i className="fa-regular fa-pen-to-square"></i>
+                <i className={`fa-regular fa-pen-to-square${styles.fixedicons}`}></i>
               </Link>
             )}
           </div>

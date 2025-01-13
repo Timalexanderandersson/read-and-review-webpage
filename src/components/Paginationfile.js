@@ -9,7 +9,7 @@ const Paginationfile = ({ postEachpage, totalPost, paginate }) => {
   }
 
   return (
-    <Pagination>
+    <Pagination className="d-flex justify-content-center">
       {pagenumbers.map((number) => (
         <Pagination.Item onClick={() => paginate(number)} key={number}>
           {number}
