@@ -19,7 +19,7 @@ const Posts = ({posts}) => {
             <i className="fa-regular fa-comment mt-2"></i>
               </Link>
             </div>
-          ))};
+          ))}
     </div>
   )
 };

@@ -77,7 +77,7 @@ export const NavBar = () => {
             </Nav.Item>
           </Nav>
         )}
-        ;
+
         <Dropdown className={styles.hidelink}>
           <Dropdown.Toggle
             id="dropdown-autoclose-true"
@@ -96,7 +96,7 @@ export const NavBar = () => {
                   Explore new
                 </Link>
                 <Link className={styles.smallnavlink} to="/add-review">
-                  Add review<i className="fa-solid fa-camera-retro"></i>
+                  Add review<i className="ml-2 fa-solid fa-camera-retro"></i>
                 </Link>
                 <Link
                   className={styles.smallnavlink}
@@ -122,7 +122,7 @@ export const NavBar = () => {
                 </Link>{" "}
               </>
             )}
-            ;
+
           </Dropdown.Menu>
         </Dropdown>
       </div>
