@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Homepageposts = ({ posts }) => {
   return (
-    <div>
+    <div className={pic.centerdiv}>
       <div className={pic.ratingdiv}>
         {posts.map((post, dxk) => (
           <div key={dxk} className={pic.divforbook}>

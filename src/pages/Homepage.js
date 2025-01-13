@@ -38,17 +38,15 @@ const Homepage = () => {
           ></img>
           <div className="container"></div>
           <div className={pic.readtext}>
-            <p className="text-center mt-3">
+            <p className="text-center">
               Welcome to <strong>Read and review</strong>A website for book
               lovers who love to share and to get the thougths of recently read
               book, or discover books that you have not read yet. you can post
               reviews, and connect with others on the site!
             </p>
-            <div>
-              <hr className={pic.hrfrontline}></hr>
-            </div>
+            
             <div className={pic.bookboxdiv}>
-              <h2>New book reviews</h2>
+              <h2 className={pic.headertext}>New book reviews</h2>
               <Homepageposts posts={currentPost} />
             </div>
           </div>
