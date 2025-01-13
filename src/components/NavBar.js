@@ -40,7 +40,7 @@ export const NavBar = () => {
             </Nav.Item>
             <Nav.Item as="li">
               <Link to="/add-review" className={styles.linktext}>
-                Add review<i className="fa-solid fa-camera-retro"></i>
+                Add review<i className={`fa-solid fa-camera-retro ${styles.iconmoved}`}></i>
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
@@ -96,7 +96,7 @@ export const NavBar = () => {
                   Explore new
                 </Link>
                 <Link className={styles.smallnavlink} to="/add-review">
-                  Add review<i className="ml-2 fa-solid fa-camera-retro"></i>
+                  Add review<i className={`fa-solid fa-camera-retro ${styles.iconmoved}`}></i>
                 </Link>
                 <Link
                   className={styles.smallnavlink}

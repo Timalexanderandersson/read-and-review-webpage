@@ -31,6 +31,10 @@
     color: white;
     
 }
+/*Styles for moving the icon from link in the navbar*/
+.iconmoved{
+    margin-left: 4px;
+}
 .navcolor {
     background-color: rgb(235, 235, 235);
     box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.2);
