@@ -30,7 +30,7 @@ if successfully access user will get navigated to homepage.
   */
   useEffect(() => {
     collectInfo();
-  }, []);
+  },[]);
 
   return (
     <CurrentUserInfo.Provider value={nowUser}>

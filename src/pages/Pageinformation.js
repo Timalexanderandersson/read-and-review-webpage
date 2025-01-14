@@ -6,7 +6,7 @@ import { CurrentUserInfo } from "../users/userInformation";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import Comments from "../components/Comments";
 /**
- * 
+ *
  * Pageinformation displaying and containing the informations about different posts
  * and comments.
  */
@@ -18,19 +18,33 @@ const Pageinformation = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const userNow = useContext(CurrentUserInfo);
-/**
- * 
- * handlechange is handeling the input value.
- * It handles everything in the textarea when typed.
- */
+
+  /**
+   * handeldeletecomment is a function for deleting comments on posts.
+   * Sending a delete request for the API for a specific comment to delete.
+   * If successfully removed comment updating for the remaining comments to show.
+   *
+   */
+  const handeldeletecomment = async (comment) => {
+    try {
+      await axios.delete(`/comments/${comment.id}`);
+      let removcomment = comments.filter((e) => e.id !== comment.id);
+      setcommentData(removcomment);
+    } catch (error) {}
+  };
+  /**
+   *
+   * handlechange is handeling the input value.
+   * It handles everything in the textarea when typed.
+   */
   const handlechange = (event) => {
     setcomment(event.target.value);
   };
-/**
- * handlepostingcomment is function for posting comments.
- * It handles posting on the right id.post.
- * Sending to the API.
- */
+  /**
+   * handlepostingcomment is function for posting comments.
+   * It handles posting on the right id.post.
+   * Sending to the API.
+   */
   const handlepostingcomment = async (event) => {
     event.preventDefault();
     try {
@@ -45,13 +59,13 @@ const Pageinformation = () => {
       setErros(error.message);
     }
   };
-/**
- * useEffect for fetching data.
- * Fetching post ID data and comment ID data.
- * Getting the post `/post/${id}` ID and the comments related to that post.
- * Getting the comments `/comments/?post=${id}` ID.
- * Navigating to `/post/${id}`
- */
+  /**
+   * useEffect for fetching data.
+   * Fetching post ID data and comment ID data.
+   * Getting the post `/post/${id}` ID and the comments related to that post.
+   * Getting the comments `/comments/?post=${id}` ID.
+   * Navigating to `/post/${id}`
+   */
   useEffect(() => {
     const gettingid = async () => {
       try {
@@ -68,22 +82,8 @@ const Pageinformation = () => {
   }, [id]);
 
   /**
-   * handeldeletecomment is a function for deleting comments on posts.
-   * Sending a delete request for the API for a specific comment to delete.
-   * If successfully removed comment updating for the remaining comments to show.
-   * 
+   * This is to check if its the owner of the post.
    */
-    const handeldeletecomment = async (comment) => {
-      try {
-        await axios.delete(`/comments/${comment.id}`);
-        let removcomment = comments.filter((e) => e.id !== comment.id)
-        setcommentData(removcomment)
-      } catch (error) {}
-    };
-
-/**
- * This is to check if its the owner of the post. 
- */
   const ownerpost = userNow?.username === postsData.username;
 
   return (
@@ -106,7 +106,8 @@ const Pageinformation = () => {
             <p className={styles.textarea}>{postsData.description}</p>
             {ownerpost && (
               <Link to={`/post/${id}/edit`} className={styles.editbutton}>
-                <i className={`fa-regular fa-pen-to-square${styles.fixedicons}`}></i>
+                <i
+                  className="fa-regular fa-pen-to-square" aria-hidden="true"></i>
               </Link>
             )}
           </div>
