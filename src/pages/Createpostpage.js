@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 const Createpostpage = () => {
   const [usepics, setPictures] = useState();
   const navigaton = useNavigate();
+  const [errors, setErrors] = useState({});
 
   const [posts, setupPost] = useState({
     titel: "",
@@ -38,7 +39,9 @@ const Createpostpage = () => {
     try {
       await axios.post("/post/", posts);
       navigaton("/explore-new");
-    } catch (error) {}
+    } catch (err) {
+      setErrors(err.response?.data);
+    }
   };
 /**
  * handelingPicture function for picture.
@@ -59,12 +62,15 @@ const Createpostpage = () => {
     <div>
       <div className={styles.site}>
         <div className={styles.bigdiv}>
+        {errors.title}
           <Form onSubmit={handlePostsubmit}>
             <h3 className="text-center mt-2">Add title</h3>
             <Form.Group className="mb-3">
+            {errors.non_field_errors}
               <Form.Control type="title" name="title" onChange={handleChange} />
             </Form.Group>
             <h4 className="text-center mt-2">Description</h4>
+            {errors.title}
             <FloatingLabel>
               <Form.Control
                 as="textarea"
@@ -90,6 +96,7 @@ const Createpostpage = () => {
               </div>
             }
             <div className="d-flex justify-content-center mb-3">
+              
               <Button
                 className="mr-5"
                 variant="outline-secondary"
