@@ -50,6 +50,16 @@ const Pageinformation = () => {
     gettingid();
   }, [id]);
 
+    // delete post/with id.
+    const handeldeletecomment = async (comment) => {
+      try {
+        await axios.delete(`/comments/${comment.id}`);
+        let removcomment = comments.filter((e) => e.id !== comment.id)
+        setcommentData(removcomment)
+      } catch (error) {}
+    };
+
+
   const ownerpost = userNow?.username === postsData.username;
 
   return (
@@ -110,7 +120,7 @@ const Pageinformation = () => {
       )}
       <hr className={styles.line} />
       <div>
-        <Comments comments={comments} />
+        <Comments comments={comments} deletecomment={handeldeletecomment} />
       </div>
     </div>
   );

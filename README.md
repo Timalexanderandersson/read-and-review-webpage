@@ -408,3 +408,4 @@ https://www.youtube.com/watch?v=IYCa1F-OWmk
 * lucid.app for making my models.
 ## Acknowledgements
 * and thanks my mentor Spence for help with guidance with my project.
+* https://www.kindacode.com/article/react-removing-items-from-a-list#google_vignette

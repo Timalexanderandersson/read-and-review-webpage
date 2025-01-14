@@ -4,19 +4,11 @@ import { CurrentUserInfo } from "../users/userInformation";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const Comments = ({ comments }) => {
+const Comments = ({ comments, deletecomment}) => {
   const userNow = useContext(CurrentUserInfo);
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // delete post/with id.
-  const handeldeletecomment = async (comment) => {
-    try {
-      await axios.delete(`/comments/${comment.id}`);
-      window.location.reload();
-      navigate(`/post/${id}`);
-    } catch (error) {}
-  };
 
   return (
     <div>
@@ -31,7 +23,7 @@ const Comments = ({ comments }) => {
             <div className={styles.iconbutton}>
               <i
                 className="fa-solid fa-trash"
-                onClick={() => handeldeletecomment(comment)}
+                onClick={() => deletecomment(comment)}
               ></i>
             </div>
           )}
