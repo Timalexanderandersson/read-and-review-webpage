@@ -406,6 +406,7 @@ go to deploy in heroku go down to "Manual deploy" and press to Deploy Branch.
 https://www.youtube.com/watch?v=IYCa1F-OWmk
 * balsamiq for making wireframe.
 * lucid.app for making my models.
+* https://www.kindacode.com/article/react-removing-items-from-a-list#google_vignette
+* https://developer.mozilla.org/en-US/docs/Web/API/File/name finding file Name
 ## Acknowledgements
 * and thanks my mentor Spence for help with guidance with my project.
-* https://www.kindacode.com/article/react-removing-items-from-a-list#google_vignette
