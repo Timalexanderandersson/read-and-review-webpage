@@ -37,10 +37,10 @@
     text-align:center;
 }
 .pictures{
-    width: 100%;
-    max-width: 40vh;
-    max-height: 45vh;
+    max-width: 30vh;
+    max-height: 35vh;
     height: auto;
+    width: 100%;
 
 }
 .headertext{
