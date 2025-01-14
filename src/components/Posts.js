@@ -2,6 +2,10 @@ import React from 'react';
 import styles from "../styles/explore.module.css";
 import { Link } from 'react-router-dom';
 
+/**
+ * Posts function for showing post.
+ * Mapping posts making a list to show a preview of them in the Explore new. 
+ */
 const Posts = ({posts}) => {
 
   return (

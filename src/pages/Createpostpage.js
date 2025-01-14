@@ -4,6 +4,10 @@ import styles from "../styles/Creatingpost.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Createpostpage function is for creating post.
+ * Handle the form input title , description, image_post.
+ */
 const Createpostpage = () => {
   const [usepics, setPictures] = useState();
   const navigaton = useNavigate();
@@ -14,14 +18,21 @@ const Createpostpage = () => {
     image_post: "",
   });
   const { titel, description, image_post } = posts;
-
+/**
+ * handleChange function.
+ * This function handle form input, adding it with the users input.
+ */
   const handleChange = (event) => {
     setupPost({
       ...posts,
       [event.target.name]: event.target.value,
     });
   };
-
+/**
+ * handlePostsubmit function for posting a review.
+ * Making request to the API to post.
+ * If successful POST of review user get navigated to the explore new page.
+ */
   const handlePostsubmit = async (event) => {
     event.preventDefault();
     try {
@@ -29,7 +40,11 @@ const Createpostpage = () => {
       navigaton("/explore-new");
     } catch (error) {}
   };
-
+/**
+ * handelingPicture function for picture.
+ * This function shows the picture as a preview when creating the POST.
+ *  
+ */
   const handelingPicture = (event) => {
     const pictures = event.target.files[0];
     const collectingpic = URL.createObjectURL(pictures);

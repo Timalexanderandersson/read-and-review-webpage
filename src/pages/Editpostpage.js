@@ -4,34 +4,52 @@ import styles from "../styles/Creatingpost.module.css";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import created from "../styles/editpost.module.css";
-
+/**
+ * Editpostpage function for edit the post.
+ * This is for editing an already made post.
+ * User can change title, description, and upload new image_post.
+ * User can choose the option to delete the post.
+ */
 const Editpostpage = () => {
   const [usepics, setPictures] = useState();
   const navigaton = useNavigate();
   const { id } = useParams();
 
-  // delete post/with id.
+/**
+ * handeldeletepost function for delete the post.
+ * Function send a API request to Delete the post.
+ * If successfully deleted, user will get redirected to Homepage.
+ */
   const handeldeletepost = async () => {
     try {
       await axios.delete(`/post/${id}`);
       navigaton("/");
     } catch (error) {}
   };
-  // collecting posts
+  /**
+   * Holding the information about current posts.
+   */
   const [posts, setupPost] = useState({
     title: "",
     description: "",
     image_post: "",
   });
   const { title, description, image_post } = posts;
-
+/**
+ * handleChange function.
+ * This function handle form input of user, updating the corresponding state.
+ */
   const handleChange = (event) => {
     setupPost({
       ...posts,
       [event.target.name]: event.target.value,
     });
   };
-  // handle function for the post edit submit.
+ /**
+  * handlePostsubmit function for submit.
+  * This handles the current data of the post. title, description, image_post.
+  * API request PUT to change the updated input made by user.
+  */
   const handlePostsubmit = async (event) => {
     event.preventDefault();
     const newData = new FormData();
@@ -45,7 +63,11 @@ const Editpostpage = () => {
       navigaton("/explore-new");
     } catch (error) {}
   };
-  // give the user a preview
+ /**
+  * handelingPicture function for showing the picture.
+  * It generates a preview for the user to see the picture on the website.
+  * Showing the current picture on the post.
+  */
   const handelingPicture = (event) => {
     const pictures = event.target.files[0];
     const collectingpic = URL.createObjectURL(pictures);
@@ -55,9 +77,12 @@ const Editpostpage = () => {
       image_post: pictures,
     });
   };
-
+/**
+ * useEffect for getting the id post.
+ * Making an API request to get the /post/${id}, to get the wanted post.
+ * Collecting data for title, description, image_post.
+ */
   useEffect(() => {
-    // getting the post id for edit
     const gettingidpost = async () => {
       try {
         const { data } = await axios.get(`/post/${id}`);

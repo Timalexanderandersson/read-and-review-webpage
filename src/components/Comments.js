@@ -4,10 +4,15 @@ import { CurrentUserInfo } from "../users/userInformation";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
+/**
+ * Comments shows the made comments on a specific post.
+ * Showing all comments made on the post.
+ * Contains username,comment, and icon for the user to delete there own comments.
+ * 
+ */
 const Comments = ({ comments, deletecomment}) => {
   const userNow = useContext(CurrentUserInfo);
-  const { id } = useParams();
-  const navigate = useNavigate();
+
 
 
   return (

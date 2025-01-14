@@ -6,11 +6,24 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { CurrentUserInfo, SetCurrentUserInfo } from "../users/userInformation";
 
+/**
+ * 
+ * NavBar contains all the links in the navigation field.
+ * - If not sign in ( Home, Explore now, Sign in, Register)
+ * - If sign in (Home, Explore now, Add review, Sign out)
+ * usernow contains the current user information.
+ * setUserdata for updating information
+ * 
+ */
 export const NavBar = () => {
   const userNow = useContext(CurrentUserInfo);
   const setUserdata = useContext(SetCurrentUserInfo);
   const navigate = useNavigate();
-
+/**
+ * handleLogout function for logging out.
+ * This function send a request for signing out from the webpage to the API.
+ * If successful logout, user gets redirected to Homepage.
+ */
   const handleLogout = async () => {
     try {
       await axios.post("/dj-rest-auth/logout/");

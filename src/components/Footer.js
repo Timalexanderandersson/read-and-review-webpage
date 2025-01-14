@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "../styles/Footer.module.css";
-
+/**
+ * Footer component.
+ * Contains socialmedia links and the text "Follow us on social media".
+ * 
+ */
 const Footer = () => {
   return (
     <div className={styles.footer}>

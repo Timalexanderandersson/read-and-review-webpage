@@ -5,7 +5,13 @@ import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SetCurrentUserInfo } from "../users/userInformation";
-
+/**
+ * Signin.
+ * Containing sign in function for user.
+ * setUpUser for data storage about user.
+ * Manage the form input.
+ * Navigation for user.
+ */
 export const Signin = () => {
   const setUpUser = useContext(SetCurrentUserInfo);
 
@@ -18,14 +24,22 @@ export const Signin = () => {
 
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-
+/**
+ * handleChange function.
+ * This function handle form input of user, updating the corresponding state.
+ */
   const handleChange = (event) => {
     setsigninForm({
       ...signInForm,
       [event.target.name]: event.target.value,
     });
   };
-
+/**
+ * handleSubmit.
+ * This function send API request POST to "/dj-rest-auth/login/" for login.
+ * setUpUser storing the user.
+ * If user gets access to account, user get navigated to explore new page.
+ */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

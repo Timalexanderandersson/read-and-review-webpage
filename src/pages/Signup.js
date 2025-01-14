@@ -4,7 +4,13 @@ import signbox from "../styles/Signform.module.css";
 import { Alert, Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+/**
+ * SignUp.
+ * Function for API request for registartion for users.
+ * handleChange handles form input of user and updating.
+ * If successful registration navigated to sign in page.
+ * 
+ */
 export const Signup = () => {
   const [dataForm, setdataForm] = useState({
     username: "",
@@ -14,14 +20,21 @@ export const Signup = () => {
   const { username, password1, password2 } = dataForm;
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-
+/**
+ * handleChange function.
+ * This function handle form input of user, updating the corresponding state.
+ */
   const handleChange = (event) => {
     setdataForm({
       ...dataForm,
       [event.target.name]: event.target.value,
     });
   };
-
+/**
+ * handleSubmit function for registration.
+ * Sending a API request POST to "/dj-rest-auth/registration/".
+ * If successfully user get navigated to Sign in page.
+ */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

@@ -1,5 +1,10 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
+/**
+ * Paginationfile is function to paginate pages on the website.
+ * Function is counting posts done and make pagination for them.
+ * 
+ */
 
 const Paginationfile = ({ postEachpage, totalPost, paginate }) => {
   const pagenumbers = [];

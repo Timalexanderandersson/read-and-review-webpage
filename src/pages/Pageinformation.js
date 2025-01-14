@@ -5,7 +5,11 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { CurrentUserInfo } from "../users/userInformation";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import Comments from "../components/Comments";
-
+/**
+ * 
+ * Pageinformation displaying and containing the informations about different posts
+ * and comments.
+ */
 const Pageinformation = () => {
   const [postsData, setpostsData] = useState({});
   const [comments, setcommentData] = useState([]);
@@ -14,11 +18,19 @@ const Pageinformation = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const userNow = useContext(CurrentUserInfo);
-
+/**
+ * 
+ * handlechange is handeling the input value.
+ * It handles everything in the textarea when typed.
+ */
   const handlechange = (event) => {
     setcomment(event.target.value);
   };
-
+/**
+ * handlepostingcomment is function for posting comments.
+ * It handles posting on the right id.post.
+ * Sending to the API.
+ */
   const handlepostingcomment = async (event) => {
     event.preventDefault();
     try {
@@ -33,8 +45,13 @@ const Pageinformation = () => {
       setErros(error.message);
     }
   };
-
-  // getting the post id and comment id on post
+/**
+ * useEffect for fetching data.
+ * Fetching post ID data and comment ID data.
+ * Getting the post `/post/${id}` ID and the comments related to that post.
+ * Getting the comments `/comments/?post=${id}` ID.
+ * Navigating to `/post/${id}`
+ */
   useEffect(() => {
     const gettingid = async () => {
       try {
@@ -50,7 +67,12 @@ const Pageinformation = () => {
     gettingid();
   }, [id]);
 
-    // delete post/with id.
+  /**
+   * handeldeletecomment is a function for deleting comments on posts.
+   * Sending a delete request for the API for a specific comment to delete.
+   * If successfully removed comment updating for the remaining comments to show.
+   * 
+   */
     const handeldeletecomment = async (comment) => {
       try {
         await axios.delete(`/comments/${comment.id}`);
@@ -59,7 +81,9 @@ const Pageinformation = () => {
       } catch (error) {}
     };
 
-
+/**
+ * This is to check if its the owner of the post. 
+ */
   const ownerpost = userNow?.username === postsData.username;
 
   return (

@@ -4,13 +4,23 @@ import pic from "../styles/Homepage.module.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Homepageposts from "./Homepageposts";
-
+/**
+ * Homepage function.
+ * Contains function for fetching posts and displaying them on the homepage.
+ * postEachpage for display 4 posts
+ * useState containing the posts shown for a preview.
+ * 
+ */
 const Homepage = () => {
   const [posts, setPostinfo] = useState([]);
   const [errors, setError] = useState();
   const [pageNow, setpageNow] = useState(1);
   const [postEachpage] = useState(4);
-
+/**
+ * useEffect function for getting posts for the preview list on homepage.
+ * API request GET to collect posts from backend to display on the frontpage.
+ * fetched post stored in setPostinfo. 
+ */
   useEffect(() => {
     const GettingPosts = async () => {
       try {
@@ -22,7 +32,10 @@ const Homepage = () => {
     };
     GettingPosts();
   }, []);
-
+  /**
+   * Counting for paginations.
+   * So user can see 4 posts on the homepage..
+   */
   const lastpostcount = pageNow * postEachpage;
   const firstpostcount = lastpostcount - postEachpage;
   const currentPost = posts.slice(firstpostcount, lastpostcount);
