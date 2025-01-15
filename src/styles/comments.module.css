@@ -1,3 +1,4 @@
+/*Comments div container*/
 .divcomments{
     display:flex;
     flex-direction: column;
@@ -9,11 +10,9 @@
     align-items: center;
 
 }
-
+/*Icon for trashcan*/
 .iconbutton{
-    margin-top: 2vh;
     margin-left:1vh;
-    
 }
 .hrlinebig{
     background-color: black;
@@ -23,7 +22,7 @@
 
 /*media query for 540px*/
 @media (min-width: 540px){
-
+/*User name in comments*/
     .username{
         margin-left: 10vh;
         margin-right: 30%;
@@ -39,7 +38,7 @@
     }
 
 }
-/*media query for 100px*/
+/*media query for 1000px*/
 @media (min-width: 1000px){
 
     .username{

@@ -5,10 +5,13 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { CurrentUserInfo } from "../users/userInformation";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import Comments from "../components/Comments";
+
 /**
  *
  * Pageinformation displaying and containing the informations about different posts
  * and comments.
+ * functions for deleting comments, posting comments.
+ * and function for ordering the comments.
  */
 const Pageinformation = () => {
   const [postsData, setpostsData] = useState({});
@@ -34,16 +37,17 @@ const Pageinformation = () => {
   };
   /**
    *
-   * handlechange is handeling the input value.
-   * It handles everything in the textarea when typed.
+   * handlechange is handeling the input value from user.
+   * It handles everything in the textarea when typed in.
    */
   const handlechange = (event) => {
     setcomment(event.target.value);
   };
   /**
    * handlepostingcomment is function for posting comments.
-   * It handles posting on the right id.post.
-   * Sending to the API.
+   * It handles posting on the right id.post user want to comment on.
+   * Sending the Post to the API.
+   * Ordering the comments in a good way.
    */
   const handlepostingcomment = async (event) => {
     event.preventDefault();
@@ -107,7 +111,9 @@ const Pageinformation = () => {
             {ownerpost && (
               <Link to={`/post/${id}/edit`} className={styles.editbutton}>
                 <i
-                  className="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+                  className="fa-regular fa-pen-to-square"
+                  aria-hidden="true"
+                ></i>
               </Link>
             )}
           </div>
