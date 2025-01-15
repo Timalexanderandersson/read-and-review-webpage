@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    word-wrap: anywhere;
 
 }
 /*Icon for trashcan*/
@@ -18,6 +19,10 @@
     background-color: black;
     height: 1px;
     width: 90%;
+}
+.paragraphcomment{
+    height: auto;
+    text-align: center;
 }
 
 /*media query for 540px*/

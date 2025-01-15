@@ -26,7 +26,7 @@ const Comments = ({ comments, deletecomment }) => {
             <p className="text-center">
               <strong>{comment.username}</strong>
             </p>
-            <p className="text-center">{comment.comment}</p>
+            <p className={styles.paragraphcomment}>{comment.comment}</p>
             {userNow?.username === comment.username && (
               <div className={styles.iconbutton}>
                 <i className="fa-solid fa-trash" onClick={handleShowing}></i>
