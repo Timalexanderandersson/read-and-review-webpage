@@ -53,6 +53,9 @@
     text-decoration: none;
     color: black;
 }
+.headertext:hover{
+    color: white;
+}
 .fixedicons{
     display: flex;
     justify-content: center;
