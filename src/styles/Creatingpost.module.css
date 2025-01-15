@@ -1,3 +1,4 @@
+/*Big div for creatingpost site*/
 .site{
     display: flex;
     justify-content: center;
@@ -13,6 +14,7 @@
     background-color: rgb(241, 240, 240);
     box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
+/*Picture in the preview window*/
 .picturediv{
     max-width: 35vh;
     max-height: 35vh;
@@ -21,6 +23,7 @@
     
 
 }
+/*Delete button*/
 .deletebutton{
     margin-left: 3vh;
 }

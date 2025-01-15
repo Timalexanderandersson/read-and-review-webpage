@@ -15,11 +15,17 @@
 .iconbutton{
     margin-left:1vh;
 }
+.iconbutton :hover{
+    color:rgba(177, 177, 177, 0.712);
+}
+
+/*Styles for line between the comments*/
 .hrlinebig{
     background-color: black;
     height: 1px;
     width: 90%;
 }
+/*Commment text*/
 .paragraphcomment{
     height: auto;
     text-align: center;

@@ -16,7 +16,7 @@
 
     color:rgb(255, 255, 255);
 }
-/*iconblock*/
+/*iconblock with social media icons*/
 .centerblock{
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@ p {
 margin-top: 2vh;
  height: 1vh;
 }
-/*test above icons*/
+/*text above icons*/
 .textingstyle{
     height: 1vh;
 }
