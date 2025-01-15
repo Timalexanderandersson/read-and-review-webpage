@@ -14,9 +14,10 @@
     box-shadow:2px 2px 4px 2px rgba(0, 0, 0, 0.2);
 }
 .picturediv{
-    width: 100%;
-    height: auto;
+    max-width: 35vh;
+    max-height: 35vh;
     margin-bottom: 4vh;
+    object-fit: contain;
     
 
 }

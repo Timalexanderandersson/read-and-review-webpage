@@ -38,9 +38,9 @@
 }
 .postpictures{
     margin-top: 10px;
-    max-width:15vh;
-    max-height: 15vh;
-    height: auto;
+    max-width:10vh;
+    max-height: 10vh;
+    object-fit: contain;
     width: 100%;
     border-radius: 5px;
 }
