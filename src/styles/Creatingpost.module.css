@@ -21,6 +21,9 @@
     
 
 }
+.deletebutton{
+    margin-left: 3vh;
+}
 /*media query for 540px*/
 @media (min-width: 540px){
     .bigdiv {

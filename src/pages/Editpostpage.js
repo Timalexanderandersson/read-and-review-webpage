@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button, FloatingLabel, Form } from "react-bootstrap";
+import { Button, FloatingLabel, Form, Modal } from "react-bootstrap";
 import styles from "../styles/Creatingpost.module.css";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import created from "../styles/editpost.module.css";
-import { type } from "@testing-library/user-event/dist/type";
+
 /**
  * Editpostpage function for edit the post.
  * This is for editing an already made post.
@@ -15,6 +15,11 @@ const Editpostpage = () => {
   const [usepics, setPictures] = useState();
   const navigaton = useNavigate();
   const { id } = useParams();
+
+  const [show, setShowing] = useState(false);
+
+  const handleClosing = () => setShowing(false);
+  const handleShowing = () => setShowing(true);
 
   /**
    * handeldeletepost function for delete the post.
@@ -150,14 +155,30 @@ const Editpostpage = () => {
               >
                 Save post
               </Button>
-              <Button
-                className={created.deletbutton}
-                variant="danger"
-                type="delete"
-                onClick={handeldeletepost}
-              >
-                Delete post
-              </Button>
+                <Button variant="danger" className={styles.deletebutton} onClick={handleShowing}>
+                  Delete
+                </Button>
+                <Modal show={show} onHide={handleClosing}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Delete post</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    Are you sure you want to delete the post?
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="outline-secondary" onClick={handleClosing}>
+                      Close
+                    </Button>
+                    <Button
+                      className={created.deletbutton}
+                      variant="danger"
+                      type="delete"
+                      onClick={handeldeletepost}
+                    >
+                      Delete post
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
             </div>
           </Form>
         </div>
