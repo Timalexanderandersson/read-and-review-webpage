@@ -39,8 +39,14 @@ const Createpostpage = () => {
     try {
       await axios.post("/post/", posts);
       navigaton("/explore-new");
-    } catch (err) {
-      setErrors(err.response?.data);
+    } catch (error) {
+      let costumedescription = error.response?.data;
+      costumedescription.description = "You have to fill in a description."
+
+      let costumtitle = error.response?.data;
+      costumtitle.title = "You have to give it a title."
+
+      setErrors(costumedescription, costumtitle);
     }
   };
 /**
@@ -70,7 +76,7 @@ const Createpostpage = () => {
               <Form.Control type="title" name="title" onChange={handleChange} />
             </Form.Group>
             <h4 className="text-center mt-2">Description</h4>
-            {errors.title}
+            {errors.description}
             <FloatingLabel>
               <Form.Control
                 as="textarea"
