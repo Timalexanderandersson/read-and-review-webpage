@@ -44,9 +44,13 @@
     width: 100%;
     border-radius: 5px;
 }
+/*Link on homepage to posts*/
 .titlename{
     color:black;
     text-decoration: none;
+}
+.titlename:hover{
+    color:white;
 }
 .headertext{
     margin-top:32vh;
