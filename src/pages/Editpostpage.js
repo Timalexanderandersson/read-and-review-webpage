@@ -15,6 +15,7 @@ const Editpostpage = () => {
   const [usepics, setPictures] = useState();
   const navigaton = useNavigate();
   const { id } = useParams();
+  const [errors, setErrors] = useState({});
 
   const [show, setShowing] = useState(false);
 
@@ -84,7 +85,14 @@ const Editpostpage = () => {
     try {
       await axios.put(`/post/${id}`, newData);
       navigaton("/explore-new");
-    } catch (error) {}
+    } catch (error) {
+      let costumedescription = error.response?.data;
+      costumedescription.description = "You have to fill in a description."
+   
+      let costumtitle = error.response?.data;
+      costumtitle.title = "You have to give it a title."
+      setErrors(costumtitle, costumedescription);
+    }
   };
 
   /**
@@ -111,6 +119,7 @@ const Editpostpage = () => {
     <div>
       <div className={styles.site}>
         <div className={styles.bigdiv}>
+        {errors.title}
           <Form onSubmit={handlePostsubmit}>
             <h3 className="text-center mt-2">Change title</h3>
             <Form.Group className="mb-3">
@@ -123,6 +132,7 @@ const Editpostpage = () => {
             </Form.Group>
             <h4 className="text-center mt-2">Description</h4>
             <FloatingLabel>
+            {errors.description}
               <Form.Control
                 as="textarea"
                 type="description"

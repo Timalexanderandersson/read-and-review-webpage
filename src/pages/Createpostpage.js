@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import styles from "../styles/Creatingpost.module.css";
 import axios from "axios";
@@ -28,6 +28,8 @@ const Createpostpage = () => {
       ...posts,
       [event.target.name]: event.target.value,
     });
+
+    setErrors("")
   };
 /**
  * handlePostsubmit function for posting a review.
@@ -40,13 +42,14 @@ const Createpostpage = () => {
       await axios.post("/post/", posts);
       navigaton("/explore-new");
     } catch (error) {
-      let costumedescription = error.response?.data;
-      costumedescription.description = "You have to fill in a description."
 
-      let costumtitle = error.response?.data;
-      costumtitle.title = "You have to give it a title."
+        let costumedescription = error.response?.data;
+        costumedescription.description = "You have to fill in a description."
+     
+        let costumtitle = error.response?.data;
+        costumtitle.title = "You have to give it a title."
+        setErrors(costumtitle, costumedescription);
 
-      setErrors(costumedescription, costumtitle);
     }
   };
 /**
