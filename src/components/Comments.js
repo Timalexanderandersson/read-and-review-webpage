@@ -16,6 +16,7 @@ import { Button, FloatingLabel, Form, Modal } from "react-bootstrap";
 const Comments = ({ comments, setcommentData }) => {
   const userNow = useContext(CurrentUserInfo);
   const [show, setShowing] = useState(false);
+  const [error, setError] = useState({})
   const [selectedComment, setSelectedComment] = useState(null);
 
   /**
@@ -29,7 +30,8 @@ const Comments = ({ comments, setcommentData }) => {
       await axios.delete(`/comments/${comment.id}`);
       let removcomment = comments.filter((e) => e.id !== comment.id);
       setcommentData(removcomment);
-    } catch (error) {}
+    } catch (error) {
+    }
   };
   /**
    * Closing the Modal.

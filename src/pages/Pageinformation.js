@@ -16,7 +16,7 @@ const Pageinformation = () => {
   const [postsData, setpostsData] = useState({});
   const [comments, setcommentData] = useState([]);
   const [comment, setcomment] = useState("");
-  const [erros, setErros] = useState();
+  const [erros, setErros] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
   const userNow = useContext(CurrentUserInfo);
@@ -44,9 +44,12 @@ const Pageinformation = () => {
       });
       setcommentData((prevComments) => [data, ...prevComments]);
       setcomment("");
+      setErros("")
       navigate(`/post/${id}`);
     } catch (error) {
-      setErros(error.message);
+      let commerrortext = error.response?.data;
+      commerrortext.comment = "Can't be empty, try again!"
+      setErros(commerrortext)
     }
   };
   /**
@@ -65,7 +68,7 @@ const Pageinformation = () => {
         setcommentData(commentdata.results);
         navigate(`/post/${id}`);
       } catch (error) {
-        setErros(error.message);
+
       }
     };
     gettingid();
@@ -115,6 +118,7 @@ const Pageinformation = () => {
             controlId="floatingTextarea"
             className={styles.textingarea}
           >
+            {erros.comment}
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here"
@@ -123,6 +127,7 @@ const Pageinformation = () => {
               value={comment}
               onChange={handlechange}
             />
+            
           </FloatingLabel>
           <Button
             className={styles.buttonsubmit}
@@ -132,6 +137,8 @@ const Pageinformation = () => {
             post
           </Button>
         </Form>
+        
+
       ) : (
         <p className="text-center mb-4">Need to be sign in to comment</p>
       )}
