@@ -5,7 +5,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { CurrentUserInfo } from "../users/userInformation";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import Comments from "../components/Comments";
-
 /**
  *
  * Pageinformation displaying and containing the informations about different posts
@@ -22,19 +21,6 @@ const Pageinformation = () => {
   const navigate = useNavigate();
   const userNow = useContext(CurrentUserInfo);
 
-  /**
-   * handeldeletecomment is a function for deleting comments on posts.
-   * Sending a delete request for the API for a specific comment to delete.
-   * If successfully removed comment updating for the remaining comments to show.
-   *
-   */
-  const handeldeletecomment = async (comment) => {
-    try {
-      await axios.delete(`/comments/${comment.id}`);
-      let removcomment = comments.filter((e) => e.id !== comment.id);
-      setcommentData(removcomment);
-    } catch (error) {}
-  };
   /**
    *
    * handlechange is handeling the input value from user.
@@ -151,7 +137,7 @@ const Pageinformation = () => {
       )}
       <hr className={styles.line} />
       <div>
-        <Comments comments={comments} deletecomment={handeldeletecomment} />
+        <Comments comments={comments} setcommentData={setcommentData} />
       </div>
     </div>
   );
