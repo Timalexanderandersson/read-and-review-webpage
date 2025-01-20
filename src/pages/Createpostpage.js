@@ -29,7 +29,7 @@ const Createpostpage = () => {
       [event.target.name]: event.target.value,
     });
 
-    setErrors("")
+  
   };
 /**
  * handlePostsubmit function for posting a review.
@@ -45,10 +45,10 @@ const Createpostpage = () => {
 
         let costumedescription = error.response?.data;
         costumedescription.description = "You have to fill in a description."
-     
+
         let costumtitle = error.response?.data;
         costumtitle.title = "You have to give it a title."
-        setErrors(costumtitle, costumedescription);
+        setErrors(costumedescription, costumtitle)
 
     }
   };
