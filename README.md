@@ -312,24 +312,43 @@ When the user story is done.
 # Installed Libraries
 
 **@testing-library/dom**
+
 **testing-library/jest-dom**
+
 **testing-library/react**
+
 **testing-library/user-event**
+
 **types/react-dom**
+
 **types/react**
+
 **axios**
+
 **bootstrap**
+
 **jest**
+
 **jwt-decode**
+
 **msw**
+
 **nsw**
+
 **react-bootstrap**
+
 **react-dom**
+
 **react-router-dom**
+
 **react-scripts**
+
 **react**
+
 **util**
+
 **web-vitals**
+
 
 # Technical Stack
 
@@ -387,26 +406,70 @@ When the user story is done.
 
 ## Deployment
 
-### Create project repository
+### Create project repository github
 
-Log in to GitHub then navigate to Code institute template for making the project.
-Click on the "Use this template" on rigth side of the page, and then press the "Create a new repository"
-Creating a descriptive project name in the "Repository name" field. In the Public/Private section choose Public.
-Then click "Create Repository".
+Log in to **GitHub** then navigate to **Code institute template** for making the project. 
+
+[Code institute template ](https://github.com/Code-Institute-Org/ci-full-template).
+
+![starttemplet](src/assets/githubtemp.PNG)
+
+Click on the **"Use this template"** on rigth side of the page, and then press the **"Create a new repository"**
+
+![repository](<src/assets/skapa ny.PNG>)
+
+Creating a descriptive project name in the **"Repository name"** field. In the Public/Private section choose Public.
+Then click **"Create Repository"**.
+
+![allneeded](<src/assets/allt desista.PNG>)
 
 ### Create heroku app
 
-Login to the heroku platform.
-Navigate to the dropdown bar to the right of the website(New) on the homepage, choose to "Create new app"
+Login to the **heroku platform**.
+
+Navigate to the dropdown bar to the right of the website(New) on the homepage, choose to **"Create new app"**
+
+<details>
+<summary> <strong>New</strong></summary>
+<br>
+<img src="src/assets/skapanyappheroku.PNG">
+</details>
+<details>
+<summary> <strong>Create app</strong></summary>
+<br>
+<img src="src/assets/härskapar.PNG">
+</details>
+
+
 Give the app a project name, and choose the location you are in(Eu/US).
-Then press "Create app"
+<details>
+<summary> <strong>Us/Eu</strong></summary>
+<br>
+<img src="src/assets/skapadennyyy.PNG">
+</details>
+
+Then press **"Create app"**
 
 ### deploy heroku application
 
-Navigate on the fist page to the app that is created. enter the app.
-Navigate to "Deploy" section between the "Resources" and "Metrics".
-Go to Deployment method and choose the Github and connect to your Repository project.
-Go down to "Manual deploy" section and press the "Deploy Branch".
+Navigate to **"Deploy"** section between the **"Resources"** and **"Metrics"**.
+
+<details>
+<summary> <strong>Navigate to Deploy and adding github repository</strong></summary>
+<br>
+<img src="src/assets/deployeengit.PNG">
+</details>
+
+Go to **Deployment method** and choose the **Github** and connect to your Repository project.
+
+
+Go down to **"Manual deploy"** section and press the **"Deploy Branch"**.
+
+<details>
+<summary> <strong>Deploy Branch</strong></summary>
+<br>
+<img src="src/assets/längstnerepåsidan.PNG">
+</details>
 
 ## Credits
 
