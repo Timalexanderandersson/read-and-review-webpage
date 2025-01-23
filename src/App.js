@@ -11,6 +11,7 @@ import Createpostpage from "./pages/Createpostpage.js";
 import Explorepage from "./pages/Explorepage.js";
 import Pageinformation from "./pages/Pageinformation.js";
 import Editpostpage from "./pages/Editpostpage.js";
+import { Contact } from "./pages/Contactform.js";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route exact path="/post/:id" element={<Pageinformation />} />
         <Route exact path="/post/:id/edit" element={<Editpostpage />} />
         <Route exact path="/Register" element={<Signup />} />
+        <Route exact path="/Contact" element={<Contact />} />
+
         <Route path="*" element={<h1>Page not found!</h1>} />
       </Routes>
       <Footer />

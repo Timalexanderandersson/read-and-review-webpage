@@ -65,6 +65,14 @@ export const NavBar = () => {
                 Sign out
               </Link>
             </Nav.Item>
+            <Nav.Item as="li">
+              <Link
+                to="/Contact"
+                className={styles.linktext}
+              >
+                Contact
+              </Link>
+            </Nav.Item>
           </Nav>
         ) : (
           <Nav defaultActiveKey="/home" as="ul" className={styles.linkshiding}>
@@ -86,6 +94,14 @@ export const NavBar = () => {
             <Nav.Item as="li">
               <Link to="/Register" className={styles.linktext}>
                 Register
+              </Link>
+            </Nav.Item>
+            <Nav.Item as="li">
+              <Link
+                to="/Contact"
+                className={styles.linktext}
+              >
+                Contact
               </Link>
             </Nav.Item>
           </Nav>
@@ -118,6 +134,9 @@ export const NavBar = () => {
                 >
                   Sign out
                 </Link>{" "}
+                <Link className={styles.smallnavlink} to="/Contact">
+                  Contact
+                </Link>
               </>
             ) : (
               <>
@@ -133,6 +152,10 @@ export const NavBar = () => {
                 <Link className={styles.smallnavlink} to="/Register">
                   Register
                 </Link>{" "}
+                <Link className={styles.smallnavlink} to="/Contact">
+                  Contact
+                </Link>
+           
               </>
             )}
 

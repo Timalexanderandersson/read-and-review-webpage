@@ -10,4 +10,22 @@
     justify-content: center;
     text-align: center;
     width: 100%;
+    margin-bottom: 5vh;
+}
+.goodemail{
+    margin: 4vh;
+}
+/*Homepage edit after sending email*/
+.homepagebutton{
+    color: black;
+}
+.homepagebutton:hover{
+    color: rgb(255, 255, 255);
+}
+
+/*Media query for 540px*/
+@media (min-width: 540px){
+    .linediv{
+        margin-bottom: 0vh;
+    }
 }
