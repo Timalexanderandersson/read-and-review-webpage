@@ -231,11 +231,28 @@ When the user story is done.
 <img src="src/assets/foooooter.PNG">
 </details>
 
+### Contact page
+
+- This page contains a form if visitor/user want to contact the owner of the page.
+- Need to fill in the name, email, and alternativ in a dropdown, and then a description about it.
+
+<details>
+<summary>Contact desktop</summary>
+<br>
+<img src="src/assets/froncontactpage.PNG">
+</details>
+
+<details>
+<summary>Mobile Contact</summary>
+<br>
+<img src="src/assets/mobilecontact.PNG">
+</details>
+
 ### frontpage
 
-- frontpage include a list of 4 of the new add reviews posts. and short intro for the webpage.
+- Frontpage include a list of 4 of the new add reviews posts. and short intro for the webpage.
 <details>
-<summary>frontpage desktop</summary>
+<summary>Frontpage desktop</summary>
 <br>
 <img src="src/assets/frontpageeee.PNG">
 </details>
