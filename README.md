@@ -17,7 +17,7 @@ Its made with React and Django REST, and bootstrap.
 - [Technical Stack](#technical-stack)
 - [Testing](#testing)
 - [Validation](#validation)
-- [Testing in React](#react-test)
+- [Testing in React](#testing-in-react)
 - [Bugs](#bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)

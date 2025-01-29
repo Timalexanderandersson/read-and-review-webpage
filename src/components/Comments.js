@@ -16,7 +16,7 @@ import { Button, FloatingLabel, Form, Modal } from "react-bootstrap";
 const Comments = ({ comments, setcommentData }) => {
   const userNow = useContext(CurrentUserInfo);
   const [show, setShowing] = useState(false);
-  const [error, setError] = useState({})
+  const [error, setError] = useState({});
   const [selectedComment, setSelectedComment] = useState(null);
 
   /**

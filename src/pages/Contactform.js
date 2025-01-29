@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "../styles/Lines.module.css";
 import signbox from "../styles/Signform.module.css";
-import {  Button, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 /**
