@@ -248,6 +248,7 @@ When the user story is done.
 <img src="src/assets/mobilecontact.PNG">
 </details>
 
+
 ### frontpage
 
 - Frontpage include a list of 4 of the new add reviews posts. and short intro for the webpage.
@@ -366,6 +367,38 @@ When the user story is done.
 
 **web-vitals**
 
+ ## devDependencies (Testing)
+  
+  **babel/core**
+
+  **@babel/plugin-proposal-private-property-in-object**
+
+  **@babel/plugin-syntax-jsx**
+
+  **@babel/preset-env**
+
+  **@babel/preset-react**
+
+  **@babel/preset-typescript**
+
+  **@testing-library/dom**
+
+  **@testing-library/jest-dom**
+
+  **@testing-library/react**
+
+  **@types/react**
+
+  **@types/react-dom**
+
+  **babel-jest**
+  
+  **jest**
+
+  **msw**
+
+  **nsw**
+
 
 # Technical Stack
 
@@ -412,6 +445,27 @@ When the user story is done.
   ![alt text](src/assets/dawdawdawd.PNG)
 
 ## Testing in React.
+
+| Status  | **Delete post - Post deleted getting 204 status in Editpostpage.test.js**                            |
+| :-----: | :----------------------------------------------------- |
+| &check; | Deleted post (status code 204). |
+
+| Status  | **Registration status - When registrated getting 201 status in Signup.test.js**                           |
+| :-----: | :------------------------------------------------------------- |
+| &check; | Registration submit getting (status 201).|
+
+| Status  | **Navbar - When User not Sign in. NavBar.test.js**                           |
+| :-----: | :------------------------------------------------------------- |
+| &check; | User not sign in(Home, Explore now, Sign in, Register, Contact).
+
+| Status  | **Navbar - When Sign in. NavBar.test.js**                           |
+| :-----: | :------------------------------------------------------------- |
+| &check; | User Sign in (Home, Explore now, Sign out, Add review, Contact).
+
+
+| Status  | **Create post - button is there in the add review Editpostpage.test.js**                                     |
+| :-----: | :----------------------------------------------------------- |
+| &check; | The "Create post" button on Editpostpage.test.js |
 
 ## Bugs
 
@@ -510,6 +564,9 @@ Go down to **"Manual deploy"** section and press the **"Deploy Branch"**.
 - lucid.app for making my models.
 - https://www.kindacode.com/article/react-removing-items-from-a-list#google_vignette
 - https://developer.mozilla.org/en-US/docs/Web/API/File/name finding file Name
+- https://github.com/testing-library/jest-dom/issues/202
+- https://archive.jestjs.io/docs/en/22.x/mock-function-api#mockfnmockresolvedvaluevalue
+- https://testing-library.com/docs/react-testing-library/intro/
 
 ## Acknowledgements
 

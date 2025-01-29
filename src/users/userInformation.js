@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { refreshTokenIfNeeded } from "../api/usertimeupdated"
 
 export const CurrentUserInfo = createContext();
 export const SetCurrentUserInfo = createContext();
