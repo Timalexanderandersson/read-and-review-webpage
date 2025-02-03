@@ -329,75 +329,52 @@ When the user story is done.
 
 # Installed Libraries
 
-**@testing-library/dom**
+**@testing-library/jest-dom: 6.6.3**
 
-**testing-library/jest-dom**
+**@testing-library/react: 16.2.0**
 
-**testing-library/react**
+**@testing-library/user-event: 13.5.0**
 
-**testing-library/user-event**
+**axios: 1.7.7**
 
-**types/react-dom**
+**bootstrap": 5.3.3**
 
-**types/react**
+**jwt-decode": 3.1.2**
 
-**axios**
+**react: 18.3.1**
 
-**bootstrap**
+**react-bootstrap: 2.10.5**
 
-**jest**
+**react-dom: 18.3.1**
 
-**jwt-decode**
+**react-router-dom: 6.28.0**
 
-**msw**
+**react-scripts: 5.0.1**
 
-**nsw**
+**typescript: 4.9.5**
 
-**react-bootstrap**
+**util: 0.12.5**
 
-**react-dom**
-
-**react-router-dom**
-
-**react-scripts**
-
-**react**
-
-**util**
-
-**web-vitals**
+**web-vitals: 2.1.4**
 
  ## devDependencies (Testing)
   
-  **babel/core**
+**@testing-library/dom: 10.4.0**
 
-  **@babel/plugin-proposal-private-property-in-object**
+  **@types/react": 19.0.1**
 
-  **@babel/plugin-syntax-jsx**
+  **@types/react-dom: 19.0.1**
 
-  **@babel/preset-env**
+  **jest: 29.7.0**
 
-  **@babel/preset-react**
+  **msw: 2.6.8**
 
-  **@babel/preset-typescript**
+  **nsw : 0.1.0**
 
-  **@testing-library/dom**
-
-  **@testing-library/jest-dom**
-
-  **@testing-library/react**
-
-  **@types/react**
-
-  **@types/react-dom**
-
-  **babel-jest**
-  
-  **jest**
-
-  **msw**
-
-  **nsw**
+ **added to the list for testing**
+  "jest": {
+    "transformIgnorePatterns": 
+      "/node_modules/(?!axios)/"}
 
 
 # Technical Stack
