@@ -24,28 +24,29 @@ export const Signin = () => {
 
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
-/**
- * handleChange function.
- * This function handle form input of user, updating the corresponding state.
- */
+  /**
+   * handleChange function.
+   * This function handle form input of user, updating the corresponding state.
+   */
   const handleChange = (event) => {
     setsigninForm({
       ...signInForm,
       [event.target.name]: event.target.value,
     });
   };
-/**
- * handleSubmit.
- * This function send API request POST to "/dj-rest-auth/login/" for login.
- * setUpUser storing the user.
- * If user gets access to account, user get navigated to explore new page.
- */
+  /**
+   * handleSubmit.
+   * This function send API request POST to "/dj-rest-auth/login/" for login.
+   * setUpUser storing the user.
+   * If user gets access to account, user get navigated to explore new page.
+   * localStorage save the user and keep them logged in to webpage.
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInForm);
       setUpUser(data.user);
-
+      localStorage.setItem("currentUser", JSON.stringify(data));
       navigate("/explore-new");
     } catch (err) {
       setErrors(err.response?.data);

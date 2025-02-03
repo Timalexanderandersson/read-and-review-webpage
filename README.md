@@ -567,6 +567,8 @@ Go down to **"Manual deploy"** section and press the **"Deploy Branch"**.
 - https://github.com/testing-library/jest-dom/issues/202
 - https://archive.jestjs.io/docs/en/22.x/mock-function-api#mockfnmockresolvedvaluevalue
 - https://testing-library.com/docs/react-testing-library/intro/
+- https://altcademy.com/blog/how-to-write-data-in-json-file-using-reactjs/
+- https://www.freecodecamp.org/news/how-to-persist-a-logged-in-user-in-react/ keeping user logged in.
 
 ## Acknowledgements
 

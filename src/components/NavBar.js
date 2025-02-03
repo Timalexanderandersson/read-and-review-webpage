@@ -7,26 +7,28 @@ import axios from "axios";
 import { CurrentUserInfo, SetCurrentUserInfo } from "../users/userInformation";
 
 /**
- * 
+ *
  * NavBar contains all the links in the navigation field.
  * - If not sign in ( Home, Explore now, Sign in, Register)
  * - If sign in (Home, Explore now, Add review, Sign out)
  * usernow contains the current user information.
  * setUserdata for updating information
- * 
+ *
  */
 export const NavBar = () => {
   const userNow = useContext(CurrentUserInfo);
   const setUserdata = useContext(SetCurrentUserInfo);
   const navigate = useNavigate();
-/**
- * handleLogout function for logging out.
- * This function send a request for signing out from the webpage to the API.
- * If successful logout, user gets redirected to Homepage.
- */
+  /**
+   * handleLogout function for logging out.
+   * This function send a request for signing out from the webpage to the API.
+   * If successful logout, user gets redirected to Homepage.
+   * localStorage removes the user when logged out.
+   */
   const handleLogout = async () => {
     try {
       await axios.post("/dj-rest-auth/logout/");
+      localStorage.removeItem("currentUser");
       setUserdata(null);
       navigate("/");
     } catch (err) {}
@@ -53,7 +55,10 @@ export const NavBar = () => {
             </Nav.Item>
             <Nav.Item as="li">
               <Link to="/add-review" className={styles.linktext}>
-                Add review<i className={`fa-solid fa-camera-retro ${styles.iconmoved}`}></i>
+                Add review
+                <i
+                  className={`fa-solid fa-camera-retro ${styles.iconmoved}`}
+                ></i>
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
@@ -66,10 +71,7 @@ export const NavBar = () => {
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link
-                to="/Contact"
-                className={styles.linktext}
-              >
+              <Link to="/Contact" className={styles.linktext}>
                 Contact
               </Link>
             </Nav.Item>
@@ -97,10 +99,7 @@ export const NavBar = () => {
               </Link>
             </Nav.Item>
             <Nav.Item as="li">
-              <Link
-                to="/Contact"
-                className={styles.linktext}
-              >
+              <Link to="/Contact" className={styles.linktext}>
                 Contact
               </Link>
             </Nav.Item>
@@ -125,7 +124,10 @@ export const NavBar = () => {
                   Explore new
                 </Link>
                 <Link className={styles.smallnavlink} to="/add-review">
-                  Add review<i className={`fa-solid fa-camera-retro ${styles.iconmoved}`}></i>
+                  Add review
+                  <i
+                    className={`fa-solid fa-camera-retro ${styles.iconmoved}`}
+                  ></i>
                 </Link>
                 <Link
                   className={styles.smallnavlink}
@@ -155,10 +157,8 @@ export const NavBar = () => {
                 <Link className={styles.smallnavlink} to="/Contact">
                   Contact
                 </Link>
-           
               </>
             )}
-
           </Dropdown.Menu>
         </Dropdown>
       </div>
