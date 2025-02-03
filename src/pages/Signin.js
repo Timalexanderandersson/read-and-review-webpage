@@ -33,7 +33,7 @@ export const Signin = () => {
       ...signInForm,
       [event.target.name]: event.target.value,
     });
-  };
+  };  
   /**
    * handleSubmit.
    * This function send API request POST to "/dj-rest-auth/login/" for login.
