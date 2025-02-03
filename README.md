@@ -519,6 +519,13 @@ Go down to **"Manual deploy"** section and press the **"Deploy Branch"**.
 <img src="src/assets/längstnerepåsidan.PNG">
 </details>
 
+
+## Problem with deploy
+Problem deploy on heroku from
+getting errors. because of the @babel libraries.
+deleted all of the (@babel) and npm installed again.
+
+
 ## Credits
 
 ### Help from websites.
