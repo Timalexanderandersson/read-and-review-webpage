@@ -1,6 +1,7 @@
 module.exports = {
-    plugins: [
-      '@babel/plugin-proposal-private-property-in-object',
-      
-    ],
-  };
+  presets: ['react-app'], 
+  plugins: [
+    '@babel/plugin-proposal-private-property-in-object',
+    '@babel/plugin-proposal-private-methods',
+  ],
+};
