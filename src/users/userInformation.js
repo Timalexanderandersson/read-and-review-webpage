@@ -33,8 +33,9 @@ setnowUser collecting  the data for user.
     if (Gettinguser) {
       const thisisuser = JSON.parse(Gettinguser);
       setnowUser(thisisuser);
+      collectInfo();
     }
-    collectInfo();
+    
   }, []);
 
   return (
