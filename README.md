@@ -570,6 +570,7 @@ Go down to **"Manual deploy"** section and press the **"Deploy Branch"**.
 - https://altcademy.com/blog/how-to-write-data-in-json-file-using-reactjs/
 - https://www.freecodecamp.org/news/how-to-persist-a-logged-in-user-in-react/ keeping user logged in.
 
+
 ## Acknowledgements
 
 - and thanks my mentor Spence for help with guidance with my project.
